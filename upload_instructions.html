@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF 파일 업로드 가이드</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .upload-zone {
+            border: 3px dashed #007bff;
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            background: #f8f9fa;
+            margin: 20px 0;
+        }
+        .method-card {
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 15px 0;
+        }
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            font-family: monospace;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center text-primary">PDF 파일 업로드 가이드</h1>
+        <p class="text-center text-muted">C:\project\data 폴더의 파일들을 챗봇에 업로드하는 방법</p>
+
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                
+                <!-- 방법 1: 클라우드 업로드 -->
+                <div class="method-card">
+                    <h3 class="text-success">🌐 방법 1: 클라우드 서비스 이용 (추천)</h3>
+                    <ol>
+                        <li><strong>Google Drive, Dropbox, OneDrive 등에 PDF 파일들 업로드</strong></li>
+                        <li><strong>각 파일의 공개 링크 생성</strong></li>
+                        <li><strong>아래 명령어로 다운로드:</strong></li>
+                    </ol>
+                    
+                    <div class="code-block">
+cd /home/user/webapp/data<br>
+# 기존 파일 삭제<br>
+rm -f *.pdf<br><br>
+# Google Drive 링크 예시<br>
+curl -o "filename1.pdf" "https://drive.google.com/uc?id=FILE_ID"<br>
+curl -o "filename2.pdf" "https://drive.google.com/uc?id=FILE_ID"<br><br>
+# 서비스 재시작<br>
+cd /home/user/webapp<br>
+supervisorctl -c supervisord.conf restart tourism-chatbot
+                    </div>
+                </div>
+
+                <!-- 방법 2: 웹 업로드 -->
+                <div class="method-card">
+                    <h3 class="text-info">📤 방법 2: 웹 기반 파일 전송</h3>
+                    <ol>
+                        <li><strong>WeTransfer, SendAnywhere 등 파일 전송 서비스 이용</strong></li>
+                        <li><strong>파일들을 업로드하고 다운로드 링크 받기</strong></li>
+                        <li><strong>링크로 서버에서 다운로드</strong></li>
+                    </ol>
+                    
+                    <div class="code-block">
+# WeTransfer 등에서 받은 링크 사용<br>
+curl -o "travel_guide.pdf" "https://we.tl/download-link"
+                    </div>
+                </div>
+
+                <!-- 방법 3: Base64 인코딩 -->
+                <div class="method-card">
+                    <h3 class="text-warning">🔒 방법 3: Base64 인코딩 (작은 파일용)</h3>
+                    <p><strong>Windows에서:</strong></p>
+                    <div class="code-block">
+# PowerShell에서 실행<br>
+$bytes = [System.IO.File]::ReadAllBytes("C:\project\data\filename.pdf")<br>
+$base64 = [System.Convert]::ToBase64String($bytes)<br>
+$base64 | Out-File "filename.txt"
+                    </div>
+                    
+                    <p><strong>생성된 텍스트 파일의 내용을 복사해서 알려주시면 서버에서 디코딩해드립니다.</strong></p>
+                </div>
+
+                <!-- 방법 4: 파일 내용 설명 -->
+                <div class="method-card">
+                    <h3 class="text-secondary">📝 방법 4: 내용 설명 (임시 대안)</h3>
+                    <p><strong>PDF 파일들의 내용을 텍스트로 설명해주시면:</strong></p>
+                    <ul>
+                        <li>주요 내용과 키워드 정리</li>
+                        <li>파일별 주제와 목차</li>
+                        <li>중요한 정보 요약</li>
+                    </ul>
+                    <p>이를 바탕으로 임시 PDF를 생성해드릴 수 있습니다.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="alert alert-info mt-4">
+            <h5>🚀 빠른 테스트를 원하신다면:</h5>
+            <p>파일 내용의 주요 정보만 텍스트로 알려주시면, 즉시 챗봇용 PDF를 생성해드리겠습니다!</p>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="https://5000-i8x91e6wa8wwvqb05llf7-6532622b.e2b.dev" class="btn btn-primary btn-lg">
+                🤖 챗봇 테스트하러 가기
+            </a>
+        </div>
+    </div>
+</body>
+</html>

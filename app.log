@@ -1,0 +1,444 @@
+2025-09-19 05:15:56,799 - __main__ - INFO - 관광 챗봇 서버를 시작합니다...
+2025-09-19 05:15:56,799 - __main__ - INFO - 관광 챗봇 서버를 시작합니다...
+2025-09-19 05:16:04,037 - __main__ - INFO - RAG 시스템 초기화를 시작합니다...
+2025-09-19 05:16:04,037 - __main__ - INFO - RAG 시스템 초기화를 시작합니다...
+2025-09-19 05:16:04,038 - simple_rag - INFO - Simple RAG 시스템 초기화 시작...
+2025-09-19 05:16:04,038 - __main__ - INFO - Flask 서버를 포트 5000에서 시작합니다...
+2025-09-19 05:16:04,038 - simple_rag - INFO - Simple RAG 시스템 초기화 시작...
+2025-09-19 05:16:04,038 - simple_rag - INFO - PDF 로드 및 텍스트 추출 시작
+2025-09-19 05:16:04,038 - __main__ - INFO - Flask 서버를 포트 5000에서 시작합니다...
+2025-09-19 05:16:04,038 - simple_rag - INFO - PDF 로드 및 텍스트 추출 시작
+ * Serving Flask app 'app'
+ * Debug mode: off
+2025-09-19 05:16:04,091 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+2025-09-19 05:16:04,091 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+2025-09-19 05:16:04,091 - simple_rag - INFO - 총 1개의 페이지에서 텍스트를 추출했습니다.
+2025-09-19 05:16:04,092 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-19 05:16:04,091 - simple_rag - INFO - 총 1개의 페이지에서 텍스트를 추출했습니다.
+2025-09-19 05:16:04,092 - simple_rag - INFO - TF-IDF 벡터 생성 중...
+2025-09-19 05:16:04,092 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-19 05:16:04,092 - simple_rag - INFO - TF-IDF 벡터 생성 중...
+2025-09-19 05:16:04,113 - simple_rag - INFO - TF-IDF 벡터 생성 완료
+2025-09-19 05:16:04,113 - simple_rag - INFO - Simple RAG 시스템 초기화 완료!
+2025-09-19 05:16:04,113 - simple_rag - INFO - TF-IDF 벡터 생성 완료
+2025-09-19 05:16:04,113 - app - INFO - Simple RAG 시스템 초기화 완료
+2025-09-19 05:16:04,113 - simple_rag - INFO - Simple RAG 시스템 초기화 완료!
+2025-09-19 05:16:04,113 - app - INFO - Simple RAG 시스템 초기화 완료
+2025-09-19 05:16:11,027 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:16:11] "GET /health HTTP/1.1" 200 -
+2025-09-19 05:16:11,027 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:16:11] "GET /health HTTP/1.1" 200 -
+2025-09-19 05:16:15,338 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:16:15] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:16:15,338 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:16:15] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:16:20,023 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:16:20] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:16:20,023 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:16:20] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:16:29,825 - __main__ - INFO - 관광 챗봇 서버를 시작합니다...
+2025-09-19 05:16:29,825 - __main__ - INFO - 관광 챗봇 서버를 시작합니다...
+2025-09-19 05:16:31,444 - __main__ - INFO - RAG 시스템 초기화를 시작합니다...
+2025-09-19 05:16:31,444 - __main__ - INFO - RAG 시스템 초기화를 시작합니다...
+2025-09-19 05:16:31,445 - simple_rag - INFO - Simple RAG 시스템 초기화 시작...
+2025-09-19 05:16:31,445 - simple_rag - INFO - PDF 로드 및 텍스트 추출 시작
+2025-09-19 05:16:31,445 - simple_rag - INFO - Simple RAG 시스템 초기화 시작...
+2025-09-19 05:16:31,445 - simple_rag - INFO - PDF 로드 및 텍스트 추출 시작
+2025-09-19 05:16:31,446 - __main__ - INFO - Flask 서버를 포트 5000에서 시작합니다...
+2025-09-19 05:16:31,446 - __main__ - INFO - Flask 서버를 포트 5000에서 시작합니다...
+ * Serving Flask app 'app'
+ * Debug mode: off
+2025-09-19 05:16:31,481 - simple_rag - INFO - 총 1개의 페이지에서 텍스트를 추출했습니다.
+2025-09-19 05:16:31,481 - simple_rag - INFO - 총 1개의 페이지에서 텍스트를 추출했습니다.
+2025-09-19 05:16:31,484 - simple_rag - INFO - TF-IDF 벡터 생성 중...
+2025-09-19 05:16:31,484 - simple_rag - INFO - TF-IDF 벡터 생성 중...
+2025-09-19 05:16:31,488 - simple_rag - INFO - TF-IDF 벡터 생성 완료
+2025-09-19 05:16:31,488 - simple_rag - INFO - TF-IDF 벡터 생성 완료
+2025-09-19 05:16:31,489 - simple_rag - INFO - Simple RAG 시스템 초기화 완료!
+2025-09-19 05:16:31,489 - simple_rag - INFO - Simple RAG 시스템 초기화 완료!
+2025-09-19 05:16:31,490 - app - INFO - Simple RAG 시스템 초기화 완료
+2025-09-19 05:16:31,490 - app - INFO - Simple RAG 시스템 초기화 완료
+2025-09-19 05:16:31,493 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+2025-09-19 05:16:31,494 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-19 05:16:31,493 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+2025-09-19 05:16:31,494 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-19 05:16:36,728 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:16:36] "GET /health HTTP/1.1" 200 -
+2025-09-19 05:16:36,728 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:16:36] "GET /health HTTP/1.1" 200 -
+2025-09-19 05:17:20,467 - __main__ - INFO - 관광 챗봇 서버를 시작합니다...
+2025-09-19 05:17:20,467 - __main__ - INFO - 관광 챗봇 서버를 시작합니다...
+2025-09-19 05:17:21,926 - __main__ - INFO - RAG 시스템 초기화를 시작합니다...
+2025-09-19 05:17:21,926 - __main__ - INFO - RAG 시스템 초기화를 시작합니다...
+2025-09-19 05:17:21,926 - simple_rag - INFO - Simple RAG 시스템 초기화 시작...
+2025-09-19 05:17:21,926 - simple_rag - INFO - Simple RAG 시스템 초기화 시작...
+2025-09-19 05:17:21,927 - __main__ - INFO - Flask 서버를 포트 5000에서 시작합니다...
+2025-09-19 05:17:21,927 - simple_rag - INFO - PDF 로드 및 텍스트 추출 시작
+2025-09-19 05:17:21,927 - __main__ - INFO - Flask 서버를 포트 5000에서 시작합니다...
+2025-09-19 05:17:21,927 - simple_rag - INFO - PDF 로드 및 텍스트 추출 시작
+ * Serving Flask app 'app'
+ * Debug mode: off
+2025-09-19 05:17:21,947 - simple_rag - INFO - 총 5개의 페이지에서 텍스트를 추출했습니다.
+2025-09-19 05:17:21,947 - simple_rag - INFO - 총 5개의 페이지에서 텍스트를 추출했습니다.
+2025-09-19 05:17:21,948 - simple_rag - INFO - TF-IDF 벡터 생성 중...
+2025-09-19 05:17:21,948 - simple_rag - INFO - TF-IDF 벡터 생성 중...
+2025-09-19 05:17:21,955 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+2025-09-19 05:17:21,955 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-19 05:17:21,955 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+2025-09-19 05:17:21,955 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-19 05:17:21,959 - simple_rag - INFO - TF-IDF 벡터 생성 완료
+2025-09-19 05:17:21,959 - simple_rag - INFO - TF-IDF 벡터 생성 완료
+2025-09-19 05:17:21,959 - simple_rag - INFO - Simple RAG 시스템 초기화 완료!
+2025-09-19 05:17:21,959 - simple_rag - INFO - Simple RAG 시스템 초기화 완료!
+2025-09-19 05:17:21,960 - app - INFO - Simple RAG 시스템 초기화 완료
+2025-09-19 05:17:21,960 - app - INFO - Simple RAG 시스템 초기화 완료
+2025-09-19 05:17:30,143 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:17:30] "GET /health HTTP/1.1" 200 -
+2025-09-19 05:17:30,143 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:17:30] "GET /health HTTP/1.1" 200 -
+2025-09-19 05:17:38,828 - simple_rag - WARNING - Ollama 사용 실패, 간단한 답변으로 대체: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-09-19 05:17:38,828 - simple_rag - WARNING - Ollama 사용 실패, 간단한 답변으로 대체: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-09-19 05:17:38,831 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:17:38] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:17:38,831 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:17:38] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:17:42,699 - simple_rag - WARNING - Ollama 사용 실패, 간단한 답변으로 대체: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-09-19 05:17:42,699 - simple_rag - WARNING - Ollama 사용 실패, 간단한 답변으로 대체: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-09-19 05:17:42,701 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:17:42] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:17:42,701 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:17:42] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:18:55,212 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:18:55] "GET / HTTP/1.1" 200 -
+2025-09-19 05:18:55,212 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:18:55] "GET / HTTP/1.1" 200 -
+2025-09-19 05:18:55,387 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:18:55] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-09-19 05:18:55,387 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:18:55] "GET /static/css/style.css HTTP/1.1" 200 -
+2025-09-19 05:18:55,389 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:18:55] "GET /static/js/app.js HTTP/1.1" 200 -
+2025-09-19 05:18:55,389 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:18:55] "GET /static/js/app.js HTTP/1.1" 200 -
+2025-09-19 05:18:55,581 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:18:55] "GET /health HTTP/1.1" 200 -
+2025-09-19 05:18:55,581 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:18:55] "GET /health HTTP/1.1" 200 -
+2025-09-19 05:18:55,660 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:18:55] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-09-19 05:18:55,660 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:18:55] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-09-19 05:19:07,525 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:19:07] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:19:07,525 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:19:07] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:19:14,933 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:19:14] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:19:14,933 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:19:14] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:24:37,717 - __main__ - INFO - 관광 챗봇 서버를 시작합니다...
+2025-09-19 05:24:37,717 - __main__ - INFO - 관광 챗봇 서버를 시작합니다...
+2025-09-19 05:24:39,079 - __main__ - INFO - RAG 시스템 초기화를 시작합니다...
+2025-09-19 05:24:39,079 - __main__ - INFO - RAG 시스템 초기화를 시작합니다...
+2025-09-19 05:24:39,080 - simple_rag - INFO - Simple RAG 시스템 초기화 시작...
+2025-09-19 05:24:39,080 - simple_rag - INFO - PDF 로드 및 텍스트 추출 시작
+2025-09-19 05:24:39,080 - simple_rag - INFO - Simple RAG 시스템 초기화 시작...
+2025-09-19 05:24:39,080 - simple_rag - INFO - PDF 로드 및 텍스트 추출 시작
+2025-09-19 05:24:39,081 - __main__ - INFO - Flask 서버를 포트 5000에서 시작합니다...
+2025-09-19 05:24:39,081 - __main__ - INFO - Flask 서버를 포트 5000에서 시작합니다...
+ * Serving Flask app 'app'
+ * Debug mode: off
+2025-09-19 05:24:39,094 - simple_rag - INFO - 총 3개의 페이지에서 텍스트를 추출했습니다.
+2025-09-19 05:24:39,094 - simple_rag - INFO - 총 3개의 페이지에서 텍스트를 추출했습니다.
+2025-09-19 05:24:39,096 - simple_rag - INFO - TF-IDF 벡터 생성 중...
+2025-09-19 05:24:39,096 - simple_rag - INFO - TF-IDF 벡터 생성 중...
+2025-09-19 05:24:39,101 - simple_rag - INFO - TF-IDF 벡터 생성 완료
+2025-09-19 05:24:39,101 - simple_rag - INFO - TF-IDF 벡터 생성 완료
+2025-09-19 05:24:39,101 - simple_rag - INFO - Simple RAG 시스템 초기화 완료!
+2025-09-19 05:24:39,101 - simple_rag - INFO - Simple RAG 시스템 초기화 완료!
+2025-09-19 05:24:39,102 - app - INFO - Simple RAG 시스템 초기화 완료
+2025-09-19 05:24:39,102 - app - INFO - Simple RAG 시스템 초기화 완료
+2025-09-19 05:24:39,105 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+2025-09-19 05:24:39,105 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-19 05:24:39,105 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+2025-09-19 05:24:39,105 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-19 05:24:46,666 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:24:46] "GET /health HTTP/1.1" 200 -
+2025-09-19 05:24:46,666 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:24:46] "GET /health HTTP/1.1" 200 -
+2025-09-19 05:24:50,996 - simple_rag - WARNING - Ollama 사용 실패, 간단한 답변으로 대체: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-09-19 05:24:50,996 - simple_rag - WARNING - Ollama 사용 실패, 간단한 답변으로 대체: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-09-19 05:24:50,998 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:24:50] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:24:50,998 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:24:50] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:27:51,532 - __main__ - INFO - 관광 챗봇 서버를 시작합니다...
+2025-09-19 05:27:51,532 - __main__ - INFO - 관광 챗봇 서버를 시작합니다...
+2025-09-19 05:27:52,934 - __main__ - INFO - RAG 시스템 초기화를 시작합니다...
+2025-09-19 05:27:52,934 - __main__ - INFO - RAG 시스템 초기화를 시작합니다...
+2025-09-19 05:27:52,935 - simple_rag - INFO - Simple RAG 시스템 초기화 시작...
+2025-09-19 05:27:52,935 - simple_rag - INFO - Simple RAG 시스템 초기화 시작...
+2025-09-19 05:27:52,935 - simple_rag - INFO - PDF 로드 및 텍스트 추출 시작
+2025-09-19 05:27:52,935 - simple_rag - INFO - PDF 로드 및 텍스트 추출 시작
+2025-09-19 05:27:52,936 - __main__ - INFO - Flask 서버를 포트 5000에서 시작합니다...
+2025-09-19 05:27:52,936 - __main__ - INFO - Flask 서버를 포트 5000에서 시작합니다...
+ * Serving Flask app 'app'
+ * Debug mode: off
+2025-09-19 05:27:52,949 - simple_rag - INFO - 총 3개의 페이지에서 텍스트를 추출했습니다.
+2025-09-19 05:27:52,949 - simple_rag - INFO - 총 3개의 페이지에서 텍스트를 추출했습니다.
+2025-09-19 05:27:52,949 - simple_rag - INFO - TF-IDF 벡터 생성 중...
+2025-09-19 05:27:52,949 - simple_rag - INFO - TF-IDF 벡터 생성 중...
+2025-09-19 05:27:52,954 - simple_rag - INFO - TF-IDF 벡터 생성 완료
+2025-09-19 05:27:52,954 - simple_rag - INFO - TF-IDF 벡터 생성 완료
+2025-09-19 05:27:52,954 - simple_rag - INFO - Simple RAG 시스템 초기화 완료!
+2025-09-19 05:27:52,954 - simple_rag - INFO - Simple RAG 시스템 초기화 완료!
+2025-09-19 05:27:52,954 - app - INFO - Simple RAG 시스템 초기화 완료
+2025-09-19 05:27:52,954 - app - INFO - Simple RAG 시스템 초기화 완료
+2025-09-19 05:27:52,960 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+2025-09-19 05:27:52,960 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-19 05:27:52,960 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+2025-09-19 05:27:52,960 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-19 05:27:59,024 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:27:59] "GET /upload HTTP/1.1" 200 -
+2025-09-19 05:27:59,024 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:27:59] "GET /upload HTTP/1.1" 200 -
+2025-09-19 05:28:34,539 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:28:34] "GET /upload HTTP/1.1" 200 -
+2025-09-19 05:28:34,539 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:28:34] "GET /upload HTTP/1.1" 200 -
+2025-09-19 05:28:42,907 - simple_rag - INFO - Simple RAG 시스템 초기화 시작...
+2025-09-19 05:28:42,907 - simple_rag - INFO - PDF 로드 및 텍스트 추출 시작
+2025-09-19 05:28:42,907 - simple_rag - INFO - Simple RAG 시스템 초기화 시작...
+2025-09-19 05:28:42,907 - simple_rag - INFO - PDF 로드 및 텍스트 추출 시작
+2025-09-19 05:28:52,408 - simple_rag - INFO - 총 106개의 페이지에서 텍스트를 추출했습니다.
+2025-09-19 05:28:52,408 - simple_rag - INFO - 총 106개의 페이지에서 텍스트를 추출했습니다.
+2025-09-19 05:28:52,408 - simple_rag - INFO - TF-IDF 벡터 생성 중...
+2025-09-19 05:28:52,408 - simple_rag - INFO - TF-IDF 벡터 생성 중...
+2025-09-19 05:28:52,471 - simple_rag - INFO - TF-IDF 벡터 생성 완료
+2025-09-19 05:28:52,471 - simple_rag - INFO - Simple RAG 시스템 초기화 완료!
+2025-09-19 05:28:52,471 - simple_rag - INFO - TF-IDF 벡터 생성 완료
+2025-09-19 05:28:52,471 - simple_rag - INFO - Simple RAG 시스템 초기화 완료!
+2025-09-19 05:28:52,472 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:28:52] "POST /upload HTTP/1.1" 200 -
+2025-09-19 05:28:52,472 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:28:52] "POST /upload HTTP/1.1" 200 -
+2025-09-19 05:30:25,220 - __main__ - INFO - 관광 챗봇 서버를 시작합니다...
+2025-09-19 05:30:25,220 - __main__ - INFO - 관광 챗봇 서버를 시작합니다...
+2025-09-19 05:30:26,622 - __main__ - INFO - RAG 시스템 초기화를 시작합니다...
+2025-09-19 05:30:26,622 - __main__ - INFO - RAG 시스템 초기화를 시작합니다...
+2025-09-19 05:30:26,622 - simple_rag - INFO - Simple RAG 시스템 초기화 시작...
+2025-09-19 05:30:26,622 - simple_rag - INFO - Simple RAG 시스템 초기화 시작...
+2025-09-19 05:30:26,623 - __main__ - INFO - Flask 서버를 포트 5000에서 시작합니다...
+2025-09-19 05:30:26,623 - simple_rag - INFO - PDF 로드 및 텍스트 추출 시작
+2025-09-19 05:30:26,623 - __main__ - INFO - Flask 서버를 포트 5000에서 시작합니다...
+2025-09-19 05:30:26,623 - simple_rag - INFO - PDF 로드 및 텍스트 추출 시작
+ * Serving Flask app 'app'
+ * Debug mode: off
+2025-09-19 05:30:26,664 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+2025-09-19 05:30:26,664 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+2025-09-19 05:30:26,665 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-19 05:30:26,665 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-19 05:30:34,685 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:30:34] "GET /health HTTP/1.1" 200 -
+2025-09-19 05:30:34,685 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:30:34] "GET /health HTTP/1.1" 200 -
+2025-09-19 05:30:35,911 - simple_rag - INFO - 총 103개의 페이지에서 텍스트를 추출했습니다.
+2025-09-19 05:30:35,911 - simple_rag - INFO - TF-IDF 벡터 생성 중...
+2025-09-19 05:30:35,911 - simple_rag - INFO - 총 103개의 페이지에서 텍스트를 추출했습니다.
+2025-09-19 05:30:35,911 - simple_rag - INFO - TF-IDF 벡터 생성 중...
+2025-09-19 05:30:35,967 - simple_rag - INFO - TF-IDF 벡터 생성 완료
+2025-09-19 05:30:35,967 - simple_rag - INFO - Simple RAG 시스템 초기화 완료!
+2025-09-19 05:30:35,967 - app - INFO - Simple RAG 시스템 초기화 완료
+2025-09-19 05:30:35,967 - simple_rag - INFO - TF-IDF 벡터 생성 완료
+2025-09-19 05:30:35,967 - simple_rag - INFO - Simple RAG 시스템 초기화 완료!
+2025-09-19 05:30:35,967 - app - INFO - Simple RAG 시스템 초기화 완료
+2025-09-19 05:30:50,927 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:30:50] "GET /health HTTP/1.1" 200 -
+2025-09-19 05:30:50,927 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:30:50] "GET /health HTTP/1.1" 200 -
+2025-09-19 05:31:02,997 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:31:02] "GET / HTTP/1.1" 200 -
+2025-09-19 05:31:02,997 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:31:02] "GET / HTTP/1.1" 200 -
+2025-09-19 05:31:03,155 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:31:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-09-19 05:31:03,155 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:31:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-09-19 05:31:03,162 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:31:03] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-09-19 05:31:03,162 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:31:03] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-09-19 05:31:03,707 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:31:03] "GET /health HTTP/1.1" 200 -
+2025-09-19 05:31:03,707 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:31:03] "GET /health HTTP/1.1" 200 -
+2025-09-19 05:31:37,287 - simple_rag - WARNING - Ollama 사용 실패, 간단한 답변으로 대체: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-09-19 05:31:37,287 - simple_rag - WARNING - Ollama 사용 실패, 간단한 답변으로 대체: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-09-19 05:31:37,290 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:31:37] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:31:37,290 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:31:37] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:33:04,491 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:33:04] "GET /health HTTP/1.1" 200 -
+2025-09-19 05:33:04,491 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:33:04] "GET /health HTTP/1.1" 200 -
+2025-09-19 05:33:10,262 - simple_rag - WARNING - Ollama 사용 실패, 간단한 답변으로 대체: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-09-19 05:33:10,262 - simple_rag - WARNING - Ollama 사용 실패, 간단한 답변으로 대체: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-09-19 05:33:10,264 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:33:10] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:33:10,264 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:33:10] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:33:55,904 - simple_rag - WARNING - Ollama 사용 실패, 간단한 답변으로 대체: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-09-19 05:33:55,904 - simple_rag - WARNING - Ollama 사용 실패, 간단한 답변으로 대체: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-09-19 05:33:55,907 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:33:55] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:33:55,907 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:33:55] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:36:50,102 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:36:50] "HEAD / HTTP/1.1" 200 -
+2025-09-19 05:36:50,102 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:36:50] "HEAD / HTTP/1.1" 200 -
+2025-09-19 05:49:43,430 - simple_rag - WARNING - Ollama 사용 실패, 간단한 답변으로 대체: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-09-19 05:49:43,430 - simple_rag - WARNING - Ollama 사용 실패, 간단한 답변으로 대체: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-09-19 05:49:43,438 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:49:43] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:49:43,438 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 05:49:43] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:50:45,182 - simple_rag - WARNING - Ollama 사용 실패, 간단한 답변으로 대체: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-09-19 05:50:45,182 - simple_rag - WARNING - Ollama 사용 실패, 간단한 답변으로 대체: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-09-19 05:50:45,185 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:50:45] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:50:45,185 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:50:45] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:52:20,864 - simple_rag - WARNING - Ollama 사용 실패, 간단한 답변으로 대체: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-09-19 05:52:20,864 - simple_rag - WARNING - Ollama 사용 실패, 간단한 답변으로 대체: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+2025-09-19 05:52:20,869 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:52:20] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:52:20,869 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:52:20] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:53:02,730 - __main__ - INFO - 관광 챗봇 서버를 시작합니다...
+2025-09-19 05:53:02,730 - __main__ - INFO - 관광 챗봇 서버를 시작합니다...
+2025-09-19 05:53:04,383 - __main__ - INFO - RAG 시스템 초기화를 시작합니다...
+2025-09-19 05:53:04,383 - __main__ - INFO - RAG 시스템 초기화를 시작합니다...
+2025-09-19 05:53:04,383 - advanced_rag - INFO - 고급 RAG 시스템 초기화 시작...
+2025-09-19 05:53:04,383 - advanced_rag - INFO - 고급 RAG 시스템 초기화 시작...
+2025-09-19 05:53:04,384 - __main__ - INFO - Flask 서버를 포트 5000에서 시작합니다...
+2025-09-19 05:53:04,384 - advanced_rag - INFO - 고급 PDF 처리 시작...
+2025-09-19 05:53:04,384 - __main__ - INFO - Flask 서버를 포트 5000에서 시작합니다...
+2025-09-19 05:53:04,384 - advanced_rag - INFO - 고급 PDF 처리 시작...
+ * Serving Flask app 'app'
+ * Debug mode: off
+2025-09-19 05:53:04,435 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+2025-09-19 05:53:04,435 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+2025-09-19 05:53:04,435 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-19 05:53:04,435 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-19 05:53:14,383 - advanced_rag - INFO - 총 98개의 텍스트 청크를 추출했습니다.
+2025-09-19 05:53:14,384 - advanced_rag - INFO - 고급 TF-IDF 벡터 생성 중...
+2025-09-19 05:53:14,383 - advanced_rag - INFO - 총 98개의 텍스트 청크를 추출했습니다.
+2025-09-19 05:53:14,384 - advanced_rag - INFO - 고급 TF-IDF 벡터 생성 중...
+2025-09-19 05:53:14,438 - advanced_rag - INFO - 고급 TF-IDF 벡터 생성 완료
+2025-09-19 05:53:14,438 - advanced_rag - INFO - 고급 RAG 시스템 초기화 완료!
+2025-09-19 05:53:14,438 - advanced_rag - INFO - 고급 TF-IDF 벡터 생성 완료
+2025-09-19 05:53:14,438 - app - INFO - Advanced RAG 시스템 초기화 완료
+2025-09-19 05:53:14,438 - advanced_rag - INFO - 고급 RAG 시스템 초기화 완료!
+2025-09-19 05:53:14,438 - app - INFO - Advanced RAG 시스템 초기화 완료
+2025-09-19 05:53:17,381 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:53:17] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:53:17,381 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:53:17] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:53:23,497 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:53:23] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:53:23,497 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:53:23] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:55:09,627 - __main__ - INFO - 관광 챗봇 서버를 시작합니다...
+2025-09-19 05:55:09,627 - __main__ - INFO - 관광 챗봇 서버를 시작합니다...
+2025-09-19 05:55:11,104 - __main__ - INFO - RAG 시스템 초기화를 시작합니다...
+2025-09-19 05:55:11,104 - __main__ - INFO - RAG 시스템 초기화를 시작합니다...
+2025-09-19 05:55:11,105 - fixed_rag - INFO - 수정된 RAG 시스템 초기화 시작...
+2025-09-19 05:55:11,105 - fixed_rag - INFO - PDF 파일 로드 시작...
+2025-09-19 05:55:11,105 - fixed_rag - INFO - 수정된 RAG 시스템 초기화 시작...
+2025-09-19 05:55:11,105 - fixed_rag - INFO - PDF 파일 로드 시작...
+2025-09-19 05:55:11,115 - __main__ - INFO - Flask 서버를 포트 5000에서 시작합니다...
+2025-09-19 05:55:11,115 - __main__ - INFO - Flask 서버를 포트 5000에서 시작합니다...
+2025-09-19 05:55:11,136 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+2025-09-19 05:55:11,136 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+ * Serving Flask app 'app'
+ * Debug mode: off
+2025-09-19 05:55:11,136 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+2025-09-19 05:55:11,136 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-19 05:55:20,925 - fixed_rag - INFO - 총 113개 문서 청크 로드 완료
+2025-09-19 05:55:20,925 - fixed_rag - INFO - 총 113개 문서 청크 로드 완료
+2025-09-19 05:55:20,925 - fixed_rag - INFO - 벡터 데이터베이스 구축 중...
+2025-09-19 05:55:20,925 - fixed_rag - INFO - 벡터 데이터베이스 구축 중...
+2025-09-19 05:55:20,972 - fixed_rag - INFO - 벡터 DB 구축 완료: (113, 1500)
+2025-09-19 05:55:20,972 - fixed_rag - INFO - 수정된 RAG 시스템 초기화 완료!
+2025-09-19 05:55:20,972 - app - INFO - Fixed RAG 시스템 초기화 완료
+2025-09-19 05:55:20,972 - fixed_rag - INFO - 벡터 DB 구축 완료: (113, 1500)
+2025-09-19 05:55:20,972 - fixed_rag - INFO - 수정된 RAG 시스템 초기화 완료!
+2025-09-19 05:55:20,972 - app - INFO - Fixed RAG 시스템 초기화 완료
+2025-09-19 05:55:28,030 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:55:28] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:55:28,030 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:55:28] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:55:56,871 - __main__ - INFO - 관광 챗봇 서버를 시작합니다...
+2025-09-19 05:55:56,871 - __main__ - INFO - 관광 챗봇 서버를 시작합니다...
+2025-09-19 05:55:58,505 - __main__ - INFO - RAG 시스템 초기화를 시작합니다...
+2025-09-19 05:55:58,505 - __main__ - INFO - RAG 시스템 초기화를 시작합니다...
+2025-09-19 05:55:58,506 - fixed_rag - INFO - 수정된 RAG 시스템 초기화 시작...
+2025-09-19 05:55:58,506 - fixed_rag - INFO - 수정된 RAG 시스템 초기화 시작...
+2025-09-19 05:55:58,506 - __main__ - INFO - Flask 서버를 포트 5000에서 시작합니다...
+2025-09-19 05:55:58,506 - fixed_rag - INFO - PDF 파일 로드 시작...
+2025-09-19 05:55:58,506 - __main__ - INFO - Flask 서버를 포트 5000에서 시작합니다...
+2025-09-19 05:55:58,506 - fixed_rag - INFO - PDF 파일 로드 시작...
+ * Serving Flask app 'app'
+ * Debug mode: off
+2025-09-19 05:55:58,517 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+2025-09-19 05:55:58,517 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+2025-09-19 05:55:58,518 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-19 05:55:58,518 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-19 05:56:09,329 - fixed_rag - INFO - 총 113개 문서 청크 로드 완료
+2025-09-19 05:56:09,329 - fixed_rag - INFO - 총 113개 문서 청크 로드 완료
+2025-09-19 05:56:09,329 - fixed_rag - INFO - 벡터 데이터베이스 구축 중...
+2025-09-19 05:56:09,329 - fixed_rag - INFO - 벡터 데이터베이스 구축 중...
+2025-09-19 05:56:09,378 - fixed_rag - INFO - 벡터 DB 구축 완료: (113, 1500)
+2025-09-19 05:56:09,378 - fixed_rag - INFO - 벡터 DB 구축 완료: (113, 1500)
+2025-09-19 05:56:09,378 - fixed_rag - INFO - 수정된 RAG 시스템 초기화 완료!
+2025-09-19 05:56:09,378 - app - INFO - Fixed RAG 시스템 초기화 완료
+2025-09-19 05:56:09,378 - fixed_rag - INFO - 수정된 RAG 시스템 초기화 완료!
+2025-09-19 05:56:09,378 - app - INFO - Fixed RAG 시스템 초기화 완료
+2025-09-19 05:56:13,438 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:56:13] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:56:13,438 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:56:13] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:56:23,959 - __main__ - INFO - 관광 챗봇 서버를 시작합니다...
+2025-09-19 05:56:23,959 - __main__ - INFO - 관광 챗봇 서버를 시작합니다...
+2025-09-19 05:56:25,434 - __main__ - INFO - RAG 시스템 초기화를 시작합니다...
+2025-09-19 05:56:25,434 - __main__ - INFO - RAG 시스템 초기화를 시작합니다...
+2025-09-19 05:56:25,435 - fixed_rag - INFO - 수정된 RAG 시스템 초기화 시작...
+2025-09-19 05:56:25,435 - fixed_rag - INFO - 수정된 RAG 시스템 초기화 시작...
+2025-09-19 05:56:25,435 - __main__ - INFO - Flask 서버를 포트 5000에서 시작합니다...
+2025-09-19 05:56:25,435 - __main__ - INFO - Flask 서버를 포트 5000에서 시작합니다...
+2025-09-19 05:56:25,435 - fixed_rag - INFO - PDF 파일 로드 시작...
+2025-09-19 05:56:25,435 - fixed_rag - INFO - PDF 파일 로드 시작...
+ * Serving Flask app 'app'
+ * Debug mode: off
+2025-09-19 05:56:25,485 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+2025-09-19 05:56:25,485 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-19 05:56:25,485 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+2025-09-19 05:56:25,485 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-19 05:56:36,158 - fixed_rag - INFO - 총 113개 문서 청크 로드 완료
+2025-09-19 05:56:36,158 - fixed_rag - INFO - 벡터 데이터베이스 구축 중...
+2025-09-19 05:56:36,158 - fixed_rag - INFO - 총 113개 문서 청크 로드 완료
+2025-09-19 05:56:36,158 - fixed_rag - INFO - 벡터 데이터베이스 구축 중...
+2025-09-19 05:56:36,205 - fixed_rag - INFO - 벡터 DB 구축 완료: (113, 1500)
+2025-09-19 05:56:36,205 - fixed_rag - INFO - 수정된 RAG 시스템 초기화 완료!
+2025-09-19 05:56:36,205 - app - INFO - Fixed RAG 시스템 초기화 완료
+2025-09-19 05:56:36,205 - fixed_rag - INFO - 벡터 DB 구축 완료: (113, 1500)
+2025-09-19 05:56:36,205 - fixed_rag - INFO - 수정된 RAG 시스템 초기화 완료!
+2025-09-19 05:56:36,205 - app - INFO - Fixed RAG 시스템 초기화 완료
+2025-09-19 05:56:36,654 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:56:36] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:56:36,654 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:56:36] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:56:42,694 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:56:42] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:56:42,694 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:56:42] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:56:48,227 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:56:48] "POST /chat HTTP/1.1" 200 -
+2025-09-19 05:56:48,227 - werkzeug - INFO - 127.0.0.1 - - [19/Sep/2025 05:56:48] "POST /chat HTTP/1.1" 200 -
+2025-09-19 06:02:00,302 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 06:02:00] "GET / HTTP/1.1" 200 -
+2025-09-19 06:02:00,302 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 06:02:00] "GET / HTTP/1.1" 200 -
+2025-09-19 06:02:00,481 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 06:02:00] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-09-19 06:02:00,481 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 06:02:00] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+2025-09-19 06:02:00,482 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 06:02:00] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-09-19 06:02:00,482 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 06:02:00] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+2025-09-19 06:02:00,661 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 06:02:00] "GET /health HTTP/1.1" 200 -
+2025-09-19 06:02:00,661 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 06:02:00] "GET /health HTTP/1.1" 200 -
+2025-09-19 06:02:10,837 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 06:02:10] "POST /chat HTTP/1.1" 200 -
+2025-09-19 06:02:10,837 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 06:02:10] "POST /chat HTTP/1.1" 200 -
+2025-09-19 06:02:21,626 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 06:02:21] "POST /chat HTTP/1.1" 200 -
+2025-09-19 06:02:21,626 - werkzeug - INFO - 10.12.18.80 - - [19/Sep/2025 06:02:21] "POST /chat HTTP/1.1" 200 -
+ * Serving Flask app 'app'
+ * Debug mode: on

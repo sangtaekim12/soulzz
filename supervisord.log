@@ -1,0 +1,50 @@
+2025-09-19 05:15:55,734 INFO RPC interface 'supervisor' initialized
+2025-09-19 05:15:55,734 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2025-09-19 05:15:55,738 INFO daemonizing the supervisord process
+2025-09-19 05:15:55,742 INFO supervisord started with pid 2436
+2025-09-19 05:15:56,746 INFO spawned: 'tourism-chatbot' with pid 2460
+2025-09-19 05:15:57,801 INFO success: tourism-chatbot entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-19 05:16:29,751 INFO waiting for tourism-chatbot to stop
+2025-09-19 05:16:29,766 WARN stopped: tourism-chatbot (terminated by SIGTERM)
+2025-09-19 05:16:29,772 INFO spawned: 'tourism-chatbot' with pid 2620
+2025-09-19 05:16:30,827 INFO success: tourism-chatbot entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-19 05:17:20,401 INFO waiting for tourism-chatbot to stop
+2025-09-19 05:17:20,414 WARN stopped: tourism-chatbot (terminated by SIGTERM)
+2025-09-19 05:17:20,418 INFO spawned: 'tourism-chatbot' with pid 2789
+2025-09-19 05:17:21,469 INFO success: tourism-chatbot entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-19 05:24:37,645 INFO waiting for tourism-chatbot to stop
+2025-09-19 05:24:37,667 WARN stopped: tourism-chatbot (terminated by SIGTERM)
+2025-09-19 05:24:37,671 INFO spawned: 'tourism-chatbot' with pid 4356
+2025-09-19 05:24:38,719 INFO success: tourism-chatbot entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-19 05:27:51,469 INFO waiting for tourism-chatbot to stop
+2025-09-19 05:27:51,482 WARN stopped: tourism-chatbot (terminated by SIGTERM)
+2025-09-19 05:27:51,486 INFO spawned: 'tourism-chatbot' with pid 5119
+2025-09-19 05:27:52,534 INFO success: tourism-chatbot entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-19 05:30:25,157 INFO waiting for tourism-chatbot to stop
+2025-09-19 05:30:25,170 WARN stopped: tourism-chatbot (terminated by SIGTERM)
+2025-09-19 05:30:25,175 INFO spawned: 'tourism-chatbot' with pid 5653
+2025-09-19 05:30:26,221 INFO success: tourism-chatbot entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-19 05:53:02,645 INFO waiting for tourism-chatbot to stop
+2025-09-19 05:53:02,664 WARN stopped: tourism-chatbot (terminated by SIGTERM)
+2025-09-19 05:53:02,670 INFO spawned: 'tourism-chatbot' with pid 9264
+2025-09-19 05:53:03,732 INFO success: tourism-chatbot entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-19 05:55:09,557 INFO waiting for tourism-chatbot to stop
+2025-09-19 05:55:09,572 WARN stopped: tourism-chatbot (terminated by SIGTERM)
+2025-09-19 05:55:09,579 INFO spawned: 'tourism-chatbot' with pid 9711
+2025-09-19 05:55:10,629 INFO success: tourism-chatbot entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-19 05:55:56,799 INFO waiting for tourism-chatbot to stop
+2025-09-19 05:55:56,814 WARN stopped: tourism-chatbot (terminated by SIGTERM)
+2025-09-19 05:55:56,820 INFO spawned: 'tourism-chatbot' with pid 9831
+2025-09-19 05:55:57,873 INFO success: tourism-chatbot entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-19 05:56:23,890 INFO waiting for tourism-chatbot to stop
+2025-09-19 05:56:23,904 WARN stopped: tourism-chatbot (terminated by SIGTERM)
+2025-09-19 05:56:23,909 INFO spawned: 'tourism-chatbot' with pid 9963
+2025-09-19 05:56:24,960 INFO success: tourism-chatbot entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-09-19 06:08:07,353 INFO waiting for tourism-chatbot to die
+2025-09-19 06:08:08,367 WARN stopped: tourism-chatbot (terminated by SIGTERM)
+2025-09-19 06:13:12,908 INFO RPC interface 'supervisor' initialized
+2025-09-19 06:13:12,909 CRIT Server 'unix_http_server' running without any HTTP authentication checking
+2025-09-19 06:13:12,912 INFO daemonizing the supervisord process
+2025-09-19 06:13:12,913 INFO supervisord started with pid 12236
+2025-09-19 06:13:13,917 INFO spawned: 'tourism-chatbot' with pid 12258
+2025-09-19 06:13:14,919 INFO success: tourism-chatbot entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)

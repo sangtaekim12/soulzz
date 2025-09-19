@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관광 지식 챗봇</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <!-- 헤더 -->
+            <div class="col-12 bg-primary text-white py-3 mb-3">
+                <div class="container">
+                    <h1 class="h3 mb-0">
+                        <i class="fas fa-map-marked-alt me-2"></i>
+                        관광 지식 챗봇
+                    </h1>
+                    <p class="mb-0 text-light">관광 관련 질문을 자유롭게 해보세요!</p>
+                </div>
+            </div>
+            
+            <!-- 메인 콘텐츠 -->
+            <div class="col-12">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-xl-6">
+                            <!-- 시스템 상태 표시 -->
+                            <div id="status-alert" class="alert alert-info d-flex align-items-center mb-4">
+                                <div class="spinner-border spinner-border-sm me-2" role="status">
+                                    <span class="visually-hidden">로딩 중...</span>
+                                </div>
+                                <span>시스템을 초기화하는 중입니다...</span>
+                            </div>
+                            
+                            <!-- 파일 업로드 링크 -->
+                            <div class="text-center mb-3">
+                                <a href="/upload" class="btn btn-outline-primary btn-sm">
+                                    <i class="fas fa-upload me-1"></i>PDF 파일 업로드
+                                </a>
+                            </div>
+                            
+                            <!-- 채팅 영역 -->
+                            <div id="chat-container" class="chat-container mb-4">
+                                <div id="chat-messages" class="chat-messages">
+                                    <!-- 환영 메시지 -->
+                                    <div class="message bot-message">
+                                        <div class="message-avatar">
+                                            <i class="fas fa-robot"></i>
+                                        </div>
+                                        <div class="message-content">
+                                            <div class="message-text">
+                                                안녕하세요! 관광 지식 챗봇입니다. 관광지, 여행 계획, 지역 정보 등에 대해 궁금한 것을 물어보세요! 📍✈️
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- 입력 영역 -->
+                            <div class="input-group mb-3">
+                                <input type="text" 
+                                       id="user-input" 
+                                       class="form-control" 
+                                       placeholder="관광 관련 질문을 입력하세요..."
+                                       disabled>
+                                <button id="send-button" class="btn btn-primary" type="button" disabled>
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                            
+                            <!-- 예시 질문들 -->
+                            <div class="example-questions mb-4">
+                                <h6 class="text-muted mb-3">예시 질문:</h6>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <button class="btn btn-outline-secondary btn-sm example-btn" disabled>
+                                        서울의 주요 관광지는?
+                                    </button>
+                                    <button class="btn btn-outline-secondary btn-sm example-btn" disabled>
+                                        부산 여행 코스 추천
+                                    </button>
+                                    <button class="btn btn-outline-secondary btn-sm example-btn" disabled>
+                                        제주도 맛집 정보
+                                    </button>
+                                    <button class="btn btn-outline-secondary btn-sm example-btn" disabled>
+                                        경주 역사 유적지
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 로딩 모달 -->
+    <div class="modal fade" id="loadingModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="modal-body text-center py-4">
+                    <div class="spinner-border text-primary mb-3" role="status">
+                        <span class="visually-hidden">답변 생성 중...</span>
+                    </div>
+                    <p class="mb-0">답변을 생성하는 중입니다...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
