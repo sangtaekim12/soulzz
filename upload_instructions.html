@@ -110,10 +110,47 @@ $base64 | Out-File "filename.txt"
         </div>
 
         <div class="text-center mt-4">
-            <a href="https://5000-i8x91e6wa8wwvqb05llf7-6532622b.e2b.dev" class="btn btn-primary btn-lg">
+            <a id="chatbotLink" href="http://localhost:5000" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
                 🤖 챗봇 테스트하러 가기
             </a>
+            <p id="chatbotLinkInfo" class="text-muted mt-2 small"></p>
         </div>
     </div>
+    <script>
+        (function() {
+            const linkElement = document.getElementById('chatbotLink');
+            const infoElement = document.getElementById('chatbotLinkInfo');
+
+            if (!linkElement) {
+                return;
+            }
+
+            try {
+                const isHttpContext = window.location.protocol === 'http:' || window.location.protocol === 'https:';
+                let targetUrl = 'http://localhost:5000';
+
+                if (isHttpContext) {
+                    const targetPort = '5000';
+                    const currentProtocol = window.location.protocol;
+                    const currentHost = window.location.hostname || 'localhost';
+                    const currentPort = window.location.port;
+
+                    if (currentPort === targetPort) {
+                        targetUrl = window.location.origin;
+                    } else {
+                        targetUrl = `${currentProtocol}//${currentHost}:${targetPort}`;
+                    }
+                }
+
+                linkElement.href = targetUrl;
+
+                if (infoElement) {
+                    infoElement.textContent = `현재 환경 기준으로 ${targetUrl} 주소로 이동합니다.`;
+                }
+            } catch (error) {
+                console.error('챗봇 링크 설정 중 오류가 발생했습니다.', error);
+            }
+        })();
+    </script>
 </body>
 </html>
