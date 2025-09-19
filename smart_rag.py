@@ -100,29 +100,26 @@ class SmartTourismRAG:
             return 'general'
 
     def clean_korean_text(self, text):
-        """한국어 텍스트 전처리"""
+        """한국어 텍스트 전처리 - 수정된 버전"""
         if not text:
             return ""
         
         # 1. 기본 정리
         text = re.sub(r'\s+', ' ', text)
         
-        # 2. 띄어쓰기 문제 해결 (한국어 특화)
-        text = re.sub(r'([가-힣])\s+([가-힣])(?=\s|[가-힣]|$)', r'\1\2', text)
+        # 2. 숫자와 단위 결합
+        text = re.sub(r'(\d+)\s*([%명개건천만억원달러톤kg])', r'\1\2', text)
         
-        # 3. 숫자와 단위 결합
-        text = re.sub(r'(\d+)\s*([%명개건천만억원달러])', r'\1\2', text)
-        
-        # 4. 영어 단어 결합
-        text = re.sub(r'([A-Za-z])\s+([A-Za-z])\s+([A-Za-z])', r'\1\2\3', text)
-        
-        # 5. 불필요한 문자 제거
+        # 3. 불필요한 문자 제거 (띄어쓰기는 유지)
         text = re.sub(r'[^\w\s가-힣.,!?%-]', ' ', text)
+        
+        # 4. 다중 공백을 단일 공백으로
+        text = re.sub(r'\s+', ' ', text)
         
         return text.strip()
 
     def extract_key_facts(self, text_list, question_type):
-        """컨텍스트에서 핵심 사실 추출"""
+        """컨텍스트에서 핵심 사실 추출 - 개선된 버전"""
         facts = []
         
         for text in text_list:
@@ -131,14 +128,20 @@ class SmartTourismRAG:
             
             for sentence in sentences:
                 sentence = sentence.strip()
-                if len(sentence) < 20 or len(sentence) > 300:
+                if len(sentence) < 15 or len(sentence) > 400:
+                    continue
+                
+                # 의미없는 문장 필터링
+                if (sentence.startswith('표') or sentence.startswith('그림') or 
+                    sentence.startswith('Figure') or sentence.startswith('Table') or
+                    len([c for c in sentence if c.isalnum()]) < 10):
                     continue
                 
                 # 질문 유형에 따른 관련 문장 점수 계산
-                score = 0
+                score = 1  # 기본 점수
                 
                 # 숫자 정보가 있으면 가산점
-                if re.search(r'\d+[%명개건천만억원달러]', sentence):
+                if re.search(r'\d+[%명개건천만억원달러톤kg]', sentence):
                     score += 2
                 
                 # 질문 유형별 키워드 매칭
@@ -147,19 +150,23 @@ class SmartTourismRAG:
                         if keyword in sentence:
                             score += 3
                 
-                # 일반적으로 유용한 키워드
+                # 확장된 유용한 키워드 매칭
                 useful_keywords = ['특성', '특징', '비율', '증가', '감소', '높음', '낮음', 
-                                '선호', '경향', '변화', '주요', '중요', '대표적']
+                                '선호', '경향', '변화', '주요', '중요', '대표적',
+                                '온실가스', '배출량', '산정', '관광산업', '탄소', '방법', '방식',
+                                '계산', '측정', '평가', '분석', '연구', '조사', 'GHG', 'CO2',
+                                '하향식', '상향식', '시범', '국제비교', '목적', '다양한']
                 for keyword in useful_keywords:
                     if keyword in sentence:
-                        score += 1
+                        score += 2
                 
-                if score >= 2:
+                # 점수가 1보다 크면 (기본 점수 + 추가 점수) 추가
+                if score > 1:
                     facts.append((sentence, score))
         
         # 점수순으로 정렬하여 상위 팩트 반환
         facts.sort(key=lambda x: x[1], reverse=True)
-        return [fact[0] for fact in facts[:5]]
+        return [fact[0] for fact in facts[:6]]  # 더 많은 팩트 반환
 
     def generate_natural_answer(self, question, key_facts, question_type):
         """자연스러운 답변 생성"""
@@ -346,6 +353,7 @@ class SmartTourismRAG:
             
             # 3. 핵심 사실 추출
             key_facts = self.extract_key_facts(retrieved_docs, question_type)
+            logger.info(f"추출된 핵심 사실 수: {len(key_facts)}")
             
             # 4. 자연스러운 답변 생성
             natural_answer = self.generate_natural_answer(question, key_facts, question_type)
