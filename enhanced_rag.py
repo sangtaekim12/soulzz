@@ -407,47 +407,140 @@ class EnhancedTourismRAG:
         if not contextual_info:
             return "질문과 관련된 구체적인 정보를 문서에서 찾을 수 없습니다. 다른 방식으로 질문해보시겠어요?"
         
-        # 답변 패턴 선택
-        starter = random.choice(self.answer_patterns[pattern_type])
-        
-        # 답변 구조화
-        answer_parts = [starter]
-        
         # 핵심 정보 선별 (최대 3개)
         key_info = contextual_info[:3]
         
+        # 정보를 문장 단위로 정제하고 구조화
+        formatted_sentences = []
+        
         for i, info in enumerate(key_info):
-            # 정보 정제
-            clean_info = self.clean_answer_text(info)
+            # 정보를 문장으로 분리하고 정제
+            sentences = self.format_to_sentences(info)
+            formatted_sentences.extend(sentences)
             
-            if i == 0:
-                answer_parts.append(clean_info)
-            elif i == len(key_info) - 1 and len(key_info) > 1:
-                connector = random.choice(self.transitions['conclusion'])
-                answer_parts.append(f"{connector} {clean_info}")
+            # 최대 4-5개 문장으로 제한
+            if len(formatted_sentences) >= 5:
+                formatted_sentences = formatted_sentences[:5]
+                break
+        
+        # 답변 구성
+        if formatted_sentences:
+            # 첫 번째 문장은 자연스러운 시작으로
+            if formatted_sentences[0].startswith(('분석에 활용한', '제공된 정보에 따르면', '연구 결과')):
+                answer_parts = [formatted_sentences[0]]
             else:
-                connector = random.choice(self.transitions['addition'])
-                answer_parts.append(f"{connector} {clean_info}")
+                starter = random.choice(self.answer_patterns[pattern_type])
+                answer_parts = [f"{starter} {formatted_sentences[0]}"]
+            
+            # 나머지 문장들 추가
+            for sentence in formatted_sentences[1:]:
+                if sentence.strip():
+                    answer_parts.append(sentence)
+        else:
+            return "질문과 관련된 구체적인 정보를 문서에서 찾을 수 없습니다."
         
-        # 답변 조합
-        answer = " ".join(answer_parts)
+        # 문단 구분과 함께 최종 답변 구성
+        formatted_answer = self.format_final_answer(answer_parts)
         
-        # 길이 및 품질 조정
-        if len(answer) > 600:
-            # 문장 경계에서 자르기
-            sentences = re.split(r'[.!?]', answer)
-            truncated = ""
-            for sentence in sentences:
-                if len(truncated + sentence + ".") <= 600:
-                    truncated += sentence + "."
-                else:
-                    break
-            answer = truncated
-        
-        return answer
+        return formatted_answer
 
+    def format_to_sentences(self, text):
+        """텍스트를 완성된 문장들로 변환"""
+        # 불필요한 부분 제거
+        text = re.sub(r'^[0-9\s\-\.]+', '', text)  # 앞쪽 번호 제거
+        text = re.sub(r'\s+', ' ', text)  # 공백 정리
+        text = text.strip()
+        
+        if not text:
+            return []
+        
+        # 긴 문장을 적절히 나누기 위한 전처리
+        # 대시나 콤마로 구분된 부분을 문장으로 분리
+        text = re.sub(r'\s*-\s*', '. ', text)  # 대시를 마침표로
+        text = re.sub(r'([^,]{50,}),\s*([가-힣])', r'\1. \2', text)  # 긴 문장의 콤마를 마침표로
+        
+        # 문장 분리 (마침표, 느낌표, 물음표 기준)
+        sentences = re.split(r'[.!?]', text)
+        formatted_sentences = []
+        
+        for sentence in sentences:
+            sentence = sentence.strip()
+            if len(sentence) < 15:  # 너무 짧은 문장 제외
+                continue
+            
+            # 문장 시작 정리
+            sentence = re.sub(r'^[-\s]+', '', sentence)
+            
+            # 너무 긴 문장 분리 (100자 이상)
+            if len(sentence) > 100:
+                # 자연스러운 분리점 찾기
+                split_points = []
+                for i, char in enumerate(sentence):
+                    if char in ['는', '을', '를', '에', '로', '고', '며'] and i > 40 and i < len(sentence) - 20:
+                        split_points.append(i + 1)
+                
+                if split_points:
+                    # 가장 적절한 분리점 선택 (중간 부근)
+                    mid_point = len(sentence) // 2
+                    best_split = min(split_points, key=lambda x: abs(x - mid_point))
+                    
+                    part1 = sentence[:best_split].strip()
+                    part2 = sentence[best_split:].strip()
+                    
+                    if part1 and len(part1) > 15:
+                        formatted_sentences.append(part1 + '.')
+                    if part2 and len(part2) > 15:
+                        sentence = part2
+            
+            # 완성된 문장으로 만들기
+            if sentence and not sentence.endswith(('.', '!', '?')):
+                sentence += '.'
+            
+            if sentence and len(sentence) > 15:
+                formatted_sentences.append(sentence)
+        
+        # 최대 4개 문장으로 제한
+        return formatted_sentences[:4]
+    
+    def format_final_answer(self, answer_parts):
+        """최종 답변을 문단 구분과 함께 포맷"""
+        if not answer_parts:
+            return ""
+        
+        # 최대 5개 문장으로 제한하여 간결성 유지
+        limited_parts = answer_parts[:5]
+        
+        formatted_paragraphs = []
+        current_paragraph = []
+        
+        for i, sentence in enumerate(limited_parts):
+            # 각 문장이 마침표로 끝나는지 확인
+            if not sentence.rstrip().endswith(('.', '!', '?')):
+                sentence = sentence.rstrip() + '.'
+            
+            current_paragraph.append(sentence)
+            
+            # 2개 문장마다 문단 구분 또는 마지막 문장
+            if len(current_paragraph) >= 2 or i == len(limited_parts) - 1:
+                if current_paragraph:
+                    # 문단 내 문장들을 한 줄로 연결
+                    paragraph_text = ' '.join(current_paragraph)
+                    formatted_paragraphs.append(paragraph_text)
+                    current_paragraph = []
+        
+        # 문단들을 줄바꿈으로 구분하여 결합
+        final_answer = '\n\n'.join(formatted_paragraphs)
+        
+        # 길이 제한 (너무 긴 경우 첫 번째 문단만 사용)
+        if len(final_answer) > 400 and len(formatted_paragraphs) > 1:
+            final_answer = formatted_paragraphs[0]
+            if not final_answer.endswith('.'):
+                final_answer += '.'
+        
+        return final_answer
+    
     def clean_answer_text(self, text):
-        """답변 텍스트 정제"""
+        """답변 텍스트 정제 (레거시 메서드)"""
         # 불필요한 부분 제거
         text = re.sub(r'^[0-9\s\-\.]+', '', text)  # 앞쪽 번호 제거
         text = re.sub(r'\s+', ' ', text)  # 공백 정리
