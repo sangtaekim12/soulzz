@@ -284,7 +284,11 @@ class EnhancedTourismRAG:
             '방법': '방법 방식 절차 과정 시스템',
             '관광산업': '관광산업 관광업 여행업 숙박업',
             '영향': '영향 효과 변화 결과 차이',
-            '특성': '특성 특징 성격 양상 패턴'
+            '특성': '특성 특징 성격 양상 패턴 프로파일',
+            '한류': '한류 K-POP K-pop 드라마 영화 콘텐츠',
+            '관광객': '관광객 외국인 방문객 여행객 방한',
+            '소비': '소비 쇼핑 구매 지출 상품',
+            '집단': '집단 그룹 층 대상 계층'
         }
         
         expanded = question
@@ -316,7 +320,7 @@ class EnhancedTourismRAG:
                     paragraph, question_keywords, question_type
                 )
                 
-                if context_score > 1:  # 임계값
+                if context_score > 1:  # 매우 관대한 임계값
                     contextual_info.append((paragraph, context_score))
         
         # 점수순 정렬
@@ -340,41 +344,60 @@ class EnhancedTourismRAG:
         return keywords
 
     def calculate_context_score(self, paragraph, keywords, question_type):
-        """컨텍스트 점수 계산"""
-        score = 0
+        """컨텍스트 점수 계산 - 개선된 버전"""
+        score = 1  # 기본 점수
         
         # 키워드 매칭 (가중치 적용)
         keyword_matches = 0
         for keyword in keywords:
             if keyword in paragraph:
                 keyword_matches += 1
-                score += 3
+                score += 2  # 키워드 매칭 점수
         
-        # 키워드 밀도 보너스
-        if len(keywords) > 0:
-            keyword_density = keyword_matches / len(keywords)
-            if keyword_density > 0.5:
-                score += 2
+        # 관련 키워드 확장 매칭
+        related_keywords = {
+            '한류': ['K-POP', 'K-pop', '드라마', '영화', '콘텐츠', '블랙핑크', 'BTS', '기생충'],
+            '관광객': ['외국인', '방문객', '여행객', '방한', '입국'],
+            '특성': ['특징', '성격', '양상', '패턴', '프로파일', '분석'],
+            '소비': ['쇼핑', '구매', '지출', '상품', '브랜드']
+        }
+        
+        for main_key, related_list in related_keywords.items():
+            if main_key in ' '.join(keywords):
+                for related in related_list:
+                    if related in paragraph:
+                        score += 1
         
         # 질문 유형별 가중치
-        if question_type == 'how':
-            method_indicators = ['방법', '방식', '과정', '절차', '시스템', '모델', '기준', '가이드라인']
+        if question_type == 'what':
+            what_indicators = ['특성', '특징', '비율', '프로파일', '분석', '조사', '결과', '집단']
+            for indicator in what_indicators:
+                if indicator in paragraph:
+                    score += 2
+        elif question_type == 'how':
+            method_indicators = ['방법', '방식', '과정', '절차', '시스템', '모델', '기준']
             for indicator in method_indicators:
                 if indicator in paragraph:
                     score += 2
         
-        # 숫자 및 구체적 정보
+        # 숫자 및 구체적 정보 (더 관대하게)
+        if re.search(r'\d+', paragraph):  # 모든 숫자
+            score += 1
         if re.search(r'\d+[%명개건천만억원달러톤kg]', paragraph):
             score += 2
         
-        # 전문 용어
-        professional_terms = ['연구', '분석', '조사', '결과', '데이터', '통계', '산업연관', '위성계정']
+        # 전문 용어 확장
+        professional_terms = ['연구', '분석', '조사', '결과', '데이터', '통계', '집단', 
+                             '여성', '남성', '연령', '국적', '방문', '활동', '행동']
         for term in professional_terms:
             if term in paragraph:
                 score += 1
         
-        # 문장 구조 품질 (완전한 문장인지)
-        if paragraph.count('.') >= 1 and not paragraph.startswith('표') and not paragraph.startswith('그림'):
+        # 문장 구조 품질
+        if (paragraph.count('.') >= 1 and 
+            not paragraph.startswith('표') and 
+            not paragraph.startswith('그림') and
+            len(paragraph) > 20):
             score += 1
         
         return score
@@ -458,6 +481,11 @@ class EnhancedTourismRAG:
             # 컨텍스트 기반 정보 추출
             contextual_info = self.extract_contextual_info(retrieved_docs, question, question_type)
             
+            # 컨텍스트 추출 실패시 폴백: 원본 문서 직접 사용
+            if not contextual_info and retrieved_docs:
+                logger.info("컨텍스트 추출 실패, 원본 문서 직접 사용")
+                contextual_info = self.fallback_extract_info(retrieved_docs, question)
+            
             # 향상된 답변 생성
             enhanced_answer = self.generate_enhanced_answer(
                 question, contextual_info, question_type, pattern_type
@@ -468,6 +496,43 @@ class EnhancedTourismRAG:
         except Exception as e:
             logger.error(f"답변 생성 오류: {e}")
             return "답변 생성 중 오류가 발생했습니다.", []
+
+    def fallback_extract_info(self, docs, question):
+        """폴백: 원본 문서에서 직접 정보 추출"""
+        logger.info("폴백 정보 추출 실행")
+        fallback_info = []
+        
+        # 질문 키워드
+        keywords = self.extract_question_keywords(question)
+        
+        for doc in docs[:2]:  # 상위 2개 문서만 사용
+            # 문장 단위로 분리
+            sentences = re.split(r'[.!?]\s*', doc)
+            
+            for sentence in sentences:
+                sentence = sentence.strip()
+                if len(sentence) < 20 or len(sentence) > 400:
+                    continue
+                
+                # 간단한 키워드 매칭
+                matches = 0
+                for keyword in keywords:
+                    if keyword in sentence:
+                        matches += 1
+                
+                # 한류 특화 키워드
+                hallyu_keywords = ['한류', '적극', '집단', '특성', '여성', '20대', 'K-POP', '드라마']
+                for hk in hallyu_keywords:
+                    if hk in sentence:
+                        matches += 1
+                
+                if matches >= 1:  # 1개 이상 키워드 매칭시 선택 (더 관대하게)
+                    fallback_info.append(sentence)
+                    
+                if len(fallback_info) >= 4:
+                    break
+        
+        return fallback_info[:3]
 
     def health_check(self):
         """시스템 상태"""

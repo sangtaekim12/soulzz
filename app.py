@@ -21,7 +21,7 @@ def initialize_rag():
     try:
         rag_system = EnhancedTourismRAG(
             data_folder="./data", 
-            similarity_threshold=0.03  # 향상된 컨텍스트 검색 임계값
+            similarity_threshold=0.01  # 매우 낮은 임계값으로 더 많은 문서 확보
         )
         rag_system.initialize()
         initialization_complete = True
@@ -126,7 +126,7 @@ def upload_files():
         if uploaded_files:
             # RAG 시스템 재초기화 (향상된 컨텍스트 버전)
             if rag_system:
-                rag_system.__init__('./data', 0.03)
+                rag_system.__init__('./data', 0.01)
                 rag_system.initialize()
             
             return jsonify({
@@ -152,4 +152,4 @@ if __name__ == '__main__':
     init_thread.start()
     
     # Flask 앱 실행 (개발 환경에서만)
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=8000, debug=True)
