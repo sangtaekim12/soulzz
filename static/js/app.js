@@ -14,30 +14,80 @@ const loadingModal = new bootstrap.Modal(document.getElementById('loadingModal')
 document.addEventListener('DOMContentLoaded', function() {
     checkSystemStatus();
     setupEventListeners();
+    autoResizeTextarea();
+    updateSendButtonState();
 });
 
 // 이벤트 리스너 설정
 function setupEventListeners() {
     // 전송 버튼 클릭
     sendButton.addEventListener('click', sendMessage);
-    
+
     // Enter 키 입력
-    userInput.addEventListener('keypress', function(e) {
+    userInput.addEventListener('keydown', function(e) {
         if (e.key === 'Enter' && !e.shiftKey) {
             e.preventDefault();
             sendMessage();
         }
     });
-    
+
+    // 입력 내용 변경
+    userInput.addEventListener('input', handleUserInput);
+
     // 예시 질문 버튼들
     exampleBtns.forEach(btn => {
         btn.addEventListener('click', function() {
             if (!btn.disabled) {
                 userInput.value = btn.textContent.trim();
+                handleUserInput();
                 sendMessage();
             }
         });
     });
+}
+
+// 입력 필드 변경 처리
+function handleUserInput() {
+    autoResizeTextarea();
+    updateSendButtonState();
+}
+
+// 텍스트 영역 자동 높이 조절
+function autoResizeTextarea() {
+    if (!userInput) {
+        return;
+    }
+
+    userInput.style.height = 'auto';
+
+    const computedStyle = window.getComputedStyle(userInput);
+    const minHeight = parseInt(computedStyle.getPropertyValue('min-height'), 10) || 0;
+    const maxHeightValue = computedStyle.getPropertyValue('max-height');
+    const parsedMaxHeight = parseInt(maxHeightValue, 10);
+    const maxHeight = maxHeightValue === 'none' || Number.isNaN(parsedMaxHeight)
+        ? Number.POSITIVE_INFINITY
+        : parsedMaxHeight;
+    const newHeight = Math.min(maxHeight, Math.max(minHeight, userInput.scrollHeight));
+
+    userInput.style.height = `${newHeight}px`;
+}
+
+// 전송 버튼 활성화 상태 업데이트
+function updateSendButtonState() {
+    if (!sendButton) {
+        return;
+    }
+
+    const hasContent = userInput.value.trim().length > 0;
+    sendButton.disabled = !isSystemReady || isWaitingForResponse || !hasContent;
+}
+
+// 입력 필드 초기화
+function resetInputField() {
+    userInput.value = '';
+    userInput.style.height = '';
+    autoResizeTextarea();
+    updateSendButtonState();
 }
 
 // 시스템 상태 확인
@@ -97,30 +147,33 @@ function updateStatusAlert(status) {
 // 인터페이스 활성화
 function enableInterface() {
     userInput.disabled = false;
-    sendButton.disabled = false;
     exampleBtns.forEach(btn => {
         btn.disabled = false;
     });
+    autoResizeTextarea();
+    updateSendButtonState();
     userInput.focus();
 }
 
 // 메시지 전송
 function sendMessage() {
     const message = userInput.value.trim();
-    
+
     if (!message || !isSystemReady || isWaitingForResponse) {
         return;
     }
-    
+
     // 사용자 메시지 추가
     addMessage(message, 'user');
-    userInput.value = '';
-    
-    // 입력 비활성화
+
+    // 전송 상태 업데이트
     isWaitingForResponse = true;
+    resetInputField();
+
+    // 입력 비활성화
     userInput.disabled = true;
     sendButton.disabled = true;
-    
+
     // 타이핑 인디케이터 추가
     const typingId = addTypingIndicator();
     
@@ -152,7 +205,8 @@ function sendMessage() {
         // 입력 다시 활성화
         isWaitingForResponse = false;
         userInput.disabled = false;
-        sendButton.disabled = false;
+        autoResizeTextarea();
+        updateSendButtonState();
         userInput.focus();
     });
 }
