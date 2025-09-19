@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify, render_template
 import threading
 import time
 import logging
-from smart_rag import SmartTourismRAG
+from enhanced_rag import EnhancedTourismRAG
 import os
 
 # 로깅 설정
@@ -19,13 +19,13 @@ def initialize_rag():
     """RAG 시스템을 백그라운드에서 초기화"""
     global rag_system, initialization_complete
     try:
-        rag_system = SmartTourismRAG(
+        rag_system = EnhancedTourismRAG(
             data_folder="./data", 
-            similarity_threshold=0.01  # 낮은 임계값으로 더 많은 결과 확보
+            similarity_threshold=0.03  # 향상된 컨텍스트 검색 임계값
         )
         rag_system.initialize()
         initialization_complete = True
-        logger.info("스마트 자연어 RAG 시스템 초기화 완료")
+        logger.info("향상된 컨텍스트 RAG 시스템 초기화 완료")
     except Exception as e:
         logger.error(f"RAG 시스템 초기화 실패: {e}")
         initialization_complete = False
@@ -124,9 +124,9 @@ def upload_files():
                 uploaded_files.append(filename)
         
         if uploaded_files:
-            # RAG 시스템 재초기화 (스마트 자연어 생성 버전)
+            # RAG 시스템 재초기화 (향상된 컨텍스트 버전)
             if rag_system:
-                rag_system.__init__('./data', 0.01)
+                rag_system.__init__('./data', 0.03)
                 rag_system.initialize()
             
             return jsonify({

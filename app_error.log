@@ -36,3 +36,719 @@ INFO:__main__:스마트 자연어 RAG 시스템 초기화 완료
 INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:13:33] "GET /health HTTP/1.1" 200 -
 INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:13:37] "POST /chat HTTP/1.1" 200 -
 INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:13:42] "POST /chat HTTP/1.1" 200 -
+INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:16:03] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:16:04] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:16:04] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:16:04] "GET /health HTTP/1.1" 200 -
+INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:16:07] "GET /health HTTP/1.1" 200 -
+INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:16:25] "POST /chat HTTP/1.1" 200 -
+INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:16:34] "GET /upload HTTP/1.1" 200 -
+INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:16:43] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:16:43] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:16:43] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:16:44] "GET /health HTTP/1.1" 200 -
+INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:16:57] "POST /chat HTTP/1.1" 200 -
+INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:17:22] "GET /health HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/home/user/webapp/smart_rag.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/smart_rag.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/smart_rag.py', reloading
+INFO:werkzeug: * Restarting with watchdog (inotify)
+INFO:smart_rag:스마트 RAG 시스템 초기화 시작...
+INFO:smart_rag:PDF 파일 로드 시작...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 961-301-114
+PDF 처리:   0%|          | 0/3 [00:00<?, ?it/s]PDF 처리:  33%|███▎      | 1/3 [00:06<00:12,  6.20s/it]PDF 처리:  67%|██████▋   | 2/3 [00:10<00:04,  4.88s/it]PDF 처리: 100%|██████████| 3/3 [00:12<00:00,  3.66s/it]PDF 처리: 100%|██████████| 3/3 [00:12<00:00,  4.12s/it]
+INFO:smart_rag:총 113개 문서 청크 로드 완료
+INFO:smart_rag:벡터 데이터베이스 구축 중...
+INFO:smart_rag:벡터 DB 구축 완료: (113, 2000)
+INFO:smart_rag:스마트 RAG 시스템 초기화 완료!
+INFO:__main__:스마트 자연어 RAG 시스템 초기화 완료
+INFO:werkzeug: * Detected change in '/home/user/webapp/smart_rag.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/smart_rag.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/smart_rag.py', reloading
+INFO:werkzeug: * Restarting with watchdog (inotify)
+INFO:smart_rag:스마트 RAG 시스템 초기화 시작...
+INFO:smart_rag:PDF 파일 로드 시작...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 961-301-114
+PDF 처리:   0%|          | 0/3 [00:00<?, ?it/s]PDF 처리:  33%|███▎      | 1/3 [00:04<00:09,  4.87s/it]PDF 처리:  67%|██████▋   | 2/3 [00:08<00:04,  4.36s/it]PDF 처리: 100%|██████████| 3/3 [00:11<00:00,  3.45s/it]PDF 처리: 100%|██████████| 3/3 [00:11<00:00,  3.74s/it]
+INFO:smart_rag:총 113개 문서 청크 로드 완료
+INFO:smart_rag:벡터 데이터베이스 구축 중...
+INFO:smart_rag:벡터 DB 구축 완료: (113, 2000)
+INFO:smart_rag:스마트 RAG 시스템 초기화 완료!
+INFO:__main__:스마트 자연어 RAG 시스템 초기화 완료
+INFO:werkzeug: * Detected change in '/home/user/webapp/smart_rag.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/smart_rag.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/smart_rag.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/smart_rag.py', reloading
+INFO:werkzeug: * Restarting with watchdog (inotify)
+INFO:smart_rag:스마트 RAG 시스템 초기화 시작...
+INFO:smart_rag:PDF 파일 로드 시작...
+PDF 처리:   0%|          | 0/3 [00:00<?, ?it/s]WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 961-301-114
+INFO:smart_rag:스마트 RAG 시스템 초기화 시작...
+INFO:smart_rag:PDF 파일 로드 시작...
+PDF 처리:   0%|          | 0/3 [00:00<?, ?it/s]INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with watchdog (inotify)
+INFO:smart_rag:스마트 RAG 시스템 초기화 시작...
+INFO:smart_rag:PDF 파일 로드 시작...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 961-301-114
+PDF 처리:   0%|          | 0/3 [00:00<?, ?it/s]INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:18:38] "[35m[1mPOST /chat HTTP/1.1[0m" 503 -
+PDF 처리:  33%|███▎      | 1/3 [00:05<00:11,  5.62s/it]PDF 처리:  33%|███▎      | 1/3 [00:05<00:11,  5.70s/it]PDF 처리:  67%|██████▋   | 2/3 [00:09<00:04,  4.47s/it]PDF 처리: 100%|██████████| 3/3 [00:11<00:00,  3.25s/it]PDF 처리: 100%|██████████| 3/3 [00:11<00:00,  3.70s/it]
+INFO:smart_rag:총 113개 문서 청크 로드 완료
+INFO:smart_rag:벡터 데이터베이스 구축 중...
+INFO:smart_rag:벡터 DB 구축 완료: (113, 2000)
+INFO:smart_rag:스마트 RAG 시스템 초기화 완료!
+INFO:__main__:스마트 자연어 RAG 시스템 초기화 완료
+PDF 처리:  67%|██████▋   | 2/3 [00:09<00:04,  4.47s/it]PDF 처리: 100%|██████████| 3/3 [00:11<00:00,  3.23s/it]PDF 처리: 100%|██████████| 3/3 [00:11<00:00,  3.69s/it]
+INFO:smart_rag:총 113개 문서 청크 로드 완료
+INFO:smart_rag:벡터 데이터베이스 구축 중...
+INFO:smart_rag:벡터 DB 구축 완료: (113, 2000)
+INFO:smart_rag:스마트 RAG 시스템 초기화 완료!
+INFO:__main__:스마트 자연어 RAG 시스템 초기화 완료
+INFO:werkzeug: * Detected change in '/home/user/webapp/smart_rag.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/smart_rag.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/smart_rag.py', reloading
+INFO:werkzeug: * Restarting with watchdog (inotify)
+INFO:smart_rag:스마트 RAG 시스템 초기화 시작...
+INFO:smart_rag:PDF 파일 로드 시작...
+PDF 처리:   0%|          | 0/3 [00:00<?, ?it/s]WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 961-301-114
+PDF 처리:  33%|███▎      | 1/3 [00:06<00:12,  6.40s/it]PDF 처리:  67%|██████▋   | 2/3 [00:10<00:05,  5.07s/it]PDF 처리: 100%|██████████| 3/3 [00:12<00:00,  3.59s/it]PDF 처리: 100%|██████████| 3/3 [00:12<00:00,  4.12s/it]
+INFO:smart_rag:총 123개 문서 청크 로드 완료
+INFO:smart_rag:벡터 데이터베이스 구축 중...
+INFO:smart_rag:벡터 DB 구축 완료: (123, 2000)
+INFO:smart_rag:스마트 RAG 시스템 초기화 완료!
+INFO:__main__:스마트 자연어 RAG 시스템 초기화 완료
+INFO:smart_rag:스마트 RAG 시스템 초기화 시작...
+INFO:smart_rag:PDF 파일 로드 시작...
+PDF 처리:   0%|          | 0/3 [00:00<?, ?it/s]INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with watchdog (inotify)
+INFO:smart_rag:스마트 RAG 시스템 초기화 시작...
+INFO:smart_rag:PDF 파일 로드 시작...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 961-301-114
+PDF 처리:   0%|          | 0/3 [00:00<?, ?it/s]PDF 처리:  33%|███▎      | 1/3 [00:04<00:09,  4.95s/it]PDF 처리:  33%|███▎      | 1/3 [00:05<00:11,  5.56s/it]PDF 처리:  67%|██████▋   | 2/3 [00:08<00:04,  4.23s/it]INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:20:10] "[35m[1mPOST /chat HTTP/1.1[0m" 503 -
+PDF 처리: 100%|██████████| 3/3 [00:10<00:00,  3.16s/it]PDF 처리: 100%|██████████| 3/3 [00:10<00:00,  3.52s/it]
+INFO:smart_rag:총 123개 문서 청크 로드 완료
+INFO:smart_rag:벡터 데이터베이스 구축 중...
+INFO:smart_rag:벡터 DB 구축 완료: (123, 2000)
+INFO:smart_rag:스마트 RAG 시스템 초기화 완료!
+INFO:__main__:스마트 자연어 RAG 시스템 초기화 완료
+PDF 처리:  67%|██████▋   | 2/3 [00:09<00:04,  4.49s/it]PDF 처리: 100%|██████████| 3/3 [00:11<00:00,  3.28s/it]PDF 처리: 100%|██████████| 3/3 [00:11<00:00,  3.71s/it]
+INFO:smart_rag:총 123개 문서 청크 로드 완료
+INFO:smart_rag:벡터 데이터베이스 구축 중...
+INFO:smart_rag:벡터 DB 구축 완료: (123, 2000)
+INFO:smart_rag:스마트 RAG 시스템 초기화 완료!
+INFO:__main__:스마트 자연어 RAG 시스템 초기화 완료
+INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:20:14] "GET /health HTTP/1.1" 200 -
+INFO:smart_rag:추출된 핵심 사실 수: 6
+INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:20:19] "POST /chat HTTP/1.1" 200 -
+INFO:smart_rag:추출된 핵심 사실 수: 2
+INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:20:41] "POST /chat HTTP/1.1" 200 -
+INFO:smart_rag:추출된 핵심 사실 수: 6
+INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:20:41] "POST /chat HTTP/1.1" 200 -
+INFO:smart_rag:추출된 핵심 사실 수: 4
+INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:20:41] "POST /chat HTTP/1.1" 200 -
+INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:21:02] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:21:03] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:21:03] "[36mGET /static/js/app.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:21:03] "GET /health HTTP/1.1" 200 -
+INFO:smart_rag:추출된 핵심 사실 수: 6
+INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:21:11] "POST /chat HTTP/1.1" 200 -
+INFO:smart_rag:추출된 핵심 사실 수: 2
+INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:22:42] "POST /chat HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/LoggingHandler.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/LoggingHandler.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/LoggingHandler.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/SentenceTransformer.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/SentenceTransformer.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/SentenceTransformer.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/data_collator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/data_collator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/data_collator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/fit_mixin.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/fit_mixin.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/fit_mixin.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/model_card.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/model_card.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/model_card.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/model_card_templates.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/model_card_templates.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/model_card_templates.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/peft_mixin.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/peft_mixin.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/peft_mixin.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/quantization.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/quantization.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/quantization.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sampler.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sampler.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sampler.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/similarity_functions.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/similarity_functions.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/similarity_functions.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/trainer.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/trainer.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/trainer.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/training_args.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/training_args.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/training_args.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/backend/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/backend/load.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/backend/load.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/backend/load.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/backend/load.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/backend/optimize.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/backend/optimize.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/backend/optimize.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/backend/quantize.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/backend/quantize.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/backend/quantize.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/backend/utils.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/backend/utils.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/backend/utils.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/CrossEncoder.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/CrossEncoder.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/CrossEncoder.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/data_collator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/data_collator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/data_collator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/fit_mixin.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/fit_mixin.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/fit_mixin.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/model_card.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/model_card.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/model_card.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/trainer.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/trainer.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/trainer.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/training_args.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/training_args.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/training_args.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/util.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/util.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/util.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/evaluation/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/evaluation/classification.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/evaluation/classification.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/evaluation/classification.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/evaluation/correlation.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/evaluation/correlation.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/evaluation/correlation.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/evaluation/deprecated.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/evaluation/deprecated.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/evaluation/deprecated.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/evaluation/nano_beir.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/evaluation/nano_beir.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/evaluation/nano_beir.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/evaluation/reranking.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/evaluation/reranking.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/evaluation/reranking.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/BinaryCrossEntropyLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/CachedMultipleNegativesRankingLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/CachedMultipleNegativesRankingLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/CachedMultipleNegativesRankingLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/CrossEntropyLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/CrossEntropyLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/CrossEntropyLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/LambdaLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/LambdaLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/LambdaLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/ListMLELoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/ListMLELoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/ListMLELoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/ListNetLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/ListNetLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/ListNetLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/MSELoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/MSELoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/MSELoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/MarginMSELoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/MarginMSELoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/MarginMSELoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/MultipleNegativesRankingLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/MultipleNegativesRankingLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/MultipleNegativesRankingLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/PListMLELoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/PListMLELoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/PListMLELoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/RankNetLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/RankNetLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/RankNetLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/cross_encoder/losses/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/datasets/DenoisingAutoEncoderDataset.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/datasets/DenoisingAutoEncoderDataset.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/datasets/DenoisingAutoEncoderDataset.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/datasets/NoDuplicatesDataLoader.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/datasets/NoDuplicatesDataLoader.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/datasets/NoDuplicatesDataLoader.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/datasets/ParallelSentencesDataset.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/datasets/ParallelSentencesDataset.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/datasets/ParallelSentencesDataset.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/datasets/SentenceLabelDataset.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/datasets/SentenceLabelDataset.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/datasets/SentenceLabelDataset.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/datasets/SentencesDataset.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/datasets/SentencesDataset.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/datasets/SentencesDataset.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/datasets/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/datasets/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/datasets/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/BinaryClassificationEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/BinaryClassificationEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/BinaryClassificationEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/EmbeddingSimilarityEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/EmbeddingSimilarityEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/EmbeddingSimilarityEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/InformationRetrievalEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/InformationRetrievalEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/InformationRetrievalEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/LabelAccuracyEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/LabelAccuracyEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/LabelAccuracyEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/MSEEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/MSEEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/MSEEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/MSEEvaluatorFromDataFrame.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/MSEEvaluatorFromDataFrame.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/MSEEvaluatorFromDataFrame.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/NanoBEIREvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/NanoBEIREvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/NanoBEIREvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/ParaphraseMiningEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/ParaphraseMiningEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/ParaphraseMiningEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/RerankingEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/RerankingEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/RerankingEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/SentenceEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/SentenceEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/SentenceEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/SequentialEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/SequentialEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/SequentialEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/SimilarityFunction.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/SimilarityFunction.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/SimilarityFunction.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/TranslationEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/TranslationEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/TranslationEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/TripletEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/TripletEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/TripletEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/evaluation/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/AdaptiveLayerLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/AdaptiveLayerLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/AdaptiveLayerLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/AnglELoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/AnglELoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/AnglELoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/BatchAllTripletLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/BatchAllTripletLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/BatchAllTripletLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/BatchHardSoftMarginTripletLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/BatchHardSoftMarginTripletLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/BatchHardSoftMarginTripletLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/BatchHardTripletLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/BatchHardTripletLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/BatchHardTripletLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/BatchSemiHardTripletLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/BatchSemiHardTripletLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/BatchSemiHardTripletLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/CachedGISTEmbedLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/CachedGISTEmbedLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/CachedGISTEmbedLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/CachedMultipleNegativesRankingLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/CachedMultipleNegativesRankingLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/CachedMultipleNegativesRankingLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/CachedMultipleNegativesSymmetricRankingLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/CachedMultipleNegativesSymmetricRankingLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/CachedMultipleNegativesSymmetricRankingLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/CoSENTLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/CoSENTLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/CoSENTLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/ContrastiveLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/ContrastiveLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/ContrastiveLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/ContrastiveTensionLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/ContrastiveTensionLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/ContrastiveTensionLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/CosineSimilarityLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/CosineSimilarityLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/CosineSimilarityLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/DenoisingAutoEncoderLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/DenoisingAutoEncoderLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/DenoisingAutoEncoderLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/DistillKLDivLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/DistillKLDivLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/DistillKLDivLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/GISTEmbedLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/GISTEmbedLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/GISTEmbedLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/MSELoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/MSELoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/MSELoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/MarginMSELoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/MarginMSELoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/MarginMSELoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/Matryoshka2dLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/Matryoshka2dLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/Matryoshka2dLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/MatryoshkaLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/MatryoshkaLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/MatryoshkaLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/MegaBatchMarginLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/MegaBatchMarginLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/MegaBatchMarginLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/MultipleNegativesRankingLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/MultipleNegativesRankingLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/MultipleNegativesRankingLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/MultipleNegativesSymmetricRankingLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/MultipleNegativesSymmetricRankingLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/MultipleNegativesSymmetricRankingLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/OnlineContrastiveLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/OnlineContrastiveLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/OnlineContrastiveLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/SoftmaxLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/SoftmaxLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/SoftmaxLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/TripletLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/TripletLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/TripletLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/losses/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/BoW.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/BoW.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/BoW.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/CLIPModel.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/CLIPModel.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/CLIPModel.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/CNN.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/CNN.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/CNN.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/Dense.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/Dense.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/Dense.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/Dropout.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/Dropout.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/Dropout.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/InputModule.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/InputModule.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/InputModule.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/LSTM.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/LSTM.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/LSTM.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/LayerNorm.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/LayerNorm.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/LayerNorm.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/Module.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/Module.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/Module.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/Normalize.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/Normalize.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/Normalize.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/Pooling.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/Pooling.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/Pooling.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/Router.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/Router.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/Router.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/StaticEmbedding.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/StaticEmbedding.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/StaticEmbedding.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/Transformer.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/Transformer.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/Transformer.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/WeightedLayerPooling.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/WeightedLayerPooling.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/WeightedLayerPooling.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/WordEmbeddings.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/WordEmbeddings.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/WordEmbeddings.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/WordWeights.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/WordWeights.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/WordWeights.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/tokenizer/PhraseTokenizer.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/tokenizer/WhitespaceTokenizer.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/tokenizer/WhitespaceTokenizer.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/tokenizer/WhitespaceTokenizer.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/tokenizer/WhitespaceTokenizer.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/tokenizer/WordTokenizer.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/tokenizer/WordTokenizer.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/tokenizer/WordTokenizer.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/tokenizer/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/tokenizer/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/models/tokenizer/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/readers/InputExample.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/readers/LabelSentenceReader.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/readers/LabelSentenceReader.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/readers/LabelSentenceReader.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/readers/NLIDataReader.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/readers/NLIDataReader.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/readers/NLIDataReader.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/readers/PairedFilesReader.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/readers/PairedFilesReader.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/readers/PairedFilesReader.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/readers/STSDataReader.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/readers/STSDataReader.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/readers/STSDataReader.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/readers/TripletReader.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/readers/TripletReader.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/readers/TripletReader.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/readers/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/readers/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/readers/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/SparseEncoder.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/SparseEncoder.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/SparseEncoder.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/data_collator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/data_collator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/data_collator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/model_card.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/model_card.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/model_card.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/search_engines.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/search_engines.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/search_engines.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/trainer.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/trainer.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/trainer.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/training_args.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/training_args.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/training_args.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/callbacks/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/callbacks/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/callbacks/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/callbacks/splade_callbacks.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/callbacks/splade_callbacks.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/callbacks/splade_callbacks.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/evaluation/ReciprocalRankFusionEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/evaluation/ReciprocalRankFusionEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/evaluation/ReciprocalRankFusionEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/evaluation/SparseBinaryClassificationEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/evaluation/SparseBinaryClassificationEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/evaluation/SparseBinaryClassificationEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/evaluation/SparseEmbeddingSimilarityEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/evaluation/SparseEmbeddingSimilarityEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/evaluation/SparseEmbeddingSimilarityEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/evaluation/SparseInformationRetrievalEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/evaluation/SparseInformationRetrievalEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/evaluation/SparseInformationRetrievalEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/evaluation/SparseMSEEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/evaluation/SparseMSEEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/evaluation/SparseMSEEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/evaluation/SparseNanoBEIREvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/evaluation/SparseNanoBEIREvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/evaluation/SparseNanoBEIREvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/evaluation/SparseRerankingEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/evaluation/SparseRerankingEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/evaluation/SparseRerankingEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/evaluation/SparseTranslationEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/evaluation/SparseTranslationEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/evaluation/SparseTranslationEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/evaluation/SparseTripletEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/evaluation/SparseTripletEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/evaluation/SparseTripletEvaluator.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/evaluation/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/evaluation/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/evaluation/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/CSRLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/FlopsLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/SparseAnglELoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/SparseAnglELoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/SparseAnglELoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/SparseCoSENTLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/SparseCoSENTLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/SparseCoSENTLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/SparseCosineSimilarityLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/SparseCosineSimilarityLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/SparseCosineSimilarityLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/SparseDistillKLDivLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/SparseDistillKLDivLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/SparseDistillKLDivLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/SparseMSELoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/SparseMSELoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/SparseMSELoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/SparseMarginMSELoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/SparseMarginMSELoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/SparseMarginMSELoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/SparseMultipleNegativesRankingLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/SparseMultipleNegativesRankingLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/SparseMultipleNegativesRankingLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/SparseTripletLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/SparseTripletLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/SparseTripletLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/SpladeLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/SpladeLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/SpladeLoss.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/losses/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/models/MLMTransformer.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/models/SparseAutoEncoder.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/models/SparseAutoEncoder.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/models/SparseAutoEncoder.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/models/SparseAutoEncoder.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/models/SparseStaticEmbedding.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/models/SparseStaticEmbedding.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/models/SparseStaticEmbedding.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/models/SpladePooling.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/models/SpladePooling.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/models/SpladePooling.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/models/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/models/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/sparse_encoder/models/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/util/__init__.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/util/decorators.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/util/decorators.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/util/decorators.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/util/distributed.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/util/distributed.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/util/distributed.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/util/environment.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/util/environment.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/util/environment.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/util/file_io.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/util/file_io.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/util/file_io.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/util/hard_negatives.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/util/hard_negatives.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/util/hard_negatives.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/util/misc.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/util/misc.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/util/misc.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/util/retrieval.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/util/retrieval.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/util/retrieval.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/util/similarity.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/util/similarity.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/util/similarity.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/util/tensor.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/util/tensor.py', reloading
+INFO:werkzeug: * Detected change in '/usr/local/lib/python3.12/site-packages/sentence_transformers/util/tensor.py', reloading
+INFO:werkzeug: * Restarting with watchdog (inotify)
+INFO:smart_rag:스마트 RAG 시스템 초기화 시작...
+INFO:smart_rag:PDF 파일 로드 시작...
+PDF 처리:   0%|          | 0/3 [00:00<?, ?it/s]WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 961-301-114
+PDF 처리:  33%|███▎      | 1/3 [00:04<00:09,  4.65s/it]PDF 처리:  67%|██████▋   | 2/3 [00:08<00:03,  3.96s/it]PDF 처리: 100%|██████████| 3/3 [00:09<00:00,  2.95s/it]PDF 처리: 100%|██████████| 3/3 [00:09<00:00,  3.29s/it]
+INFO:smart_rag:총 123개 문서 청크 로드 완료
+INFO:smart_rag:벡터 데이터베이스 구축 중...
+INFO:smart_rag:벡터 DB 구축 완료: (123, 2000)
+INFO:smart_rag:스마트 RAG 시스템 초기화 완료!
+INFO:__main__:스마트 자연어 RAG 시스템 초기화 완료
+INFO:werkzeug: * Detected change in '/home/user/webapp/semantic_rag.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/semantic_rag.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/semantic_rag.py', reloading
+INFO:werkzeug: * Restarting with watchdog (inotify)
+INFO:smart_rag:스마트 RAG 시스템 초기화 시작...
+INFO:smart_rag:PDF 파일 로드 시작...
+PDF 처리:   0%|          | 0/3 [00:00<?, ?it/s]WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 961-301-114
+PDF 처리:  33%|███▎      | 1/3 [00:04<00:09,  4.63s/it]PDF 처리:  67%|██████▋   | 2/3 [00:08<00:03,  3.91s/it]PDF 처리: 100%|██████████| 3/3 [00:09<00:00,  2.92s/it]PDF 처리: 100%|██████████| 3/3 [00:09<00:00,  3.26s/it]
+INFO:smart_rag:총 123개 문서 청크 로드 완료
+INFO:smart_rag:벡터 데이터베이스 구축 중...
+INFO:smart_rag:벡터 DB 구축 완료: (123, 2000)
+INFO:smart_rag:스마트 RAG 시스템 초기화 완료!
+INFO:__main__:스마트 자연어 RAG 시스템 초기화 완료
+INFO:werkzeug: * Detected change in '/home/user/webapp/semantic_rag.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/semantic_rag.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/semantic_rag.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/semantic_rag.py', reloading
+INFO:werkzeug: * Restarting with watchdog (inotify)
+INFO:smart_rag:스마트 RAG 시스템 초기화 시작...
+INFO:smart_rag:PDF 파일 로드 시작...
+PDF 처리:   0%|          | 0/3 [00:00<?, ?it/s]WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 961-301-114
+PDF 처리:  33%|███▎      | 1/3 [00:04<00:09,  4.54s/it]PDF 처리:  67%|██████▋   | 2/3 [00:07<00:03,  3.85s/it]PDF 처리: 100%|██████████| 3/3 [00:09<00:00,  2.93s/it]PDF 처리: 100%|██████████| 3/3 [00:09<00:00,  3.25s/it]
+INFO:smart_rag:총 123개 문서 청크 로드 완료
+INFO:smart_rag:벡터 데이터베이스 구축 중...
+INFO:smart_rag:벡터 DB 구축 완료: (123, 2000)
+INFO:smart_rag:스마트 RAG 시스템 초기화 완료!
+INFO:__main__:스마트 자연어 RAG 시스템 초기화 완료
+INFO:werkzeug: * Detected change in '/home/user/webapp/enhanced_rag.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/enhanced_rag.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/enhanced_rag.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/enhanced_rag.py', reloading
+INFO:werkzeug: * Restarting with watchdog (inotify)
+INFO:smart_rag:스마트 RAG 시스템 초기화 시작...
+INFO:smart_rag:PDF 파일 로드 시작...
+PDF 처리:   0%|          | 0/3 [00:00<?, ?it/s]WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 961-301-114
+PDF 처리:  33%|███▎      | 1/3 [00:05<00:10,  5.32s/it]PDF 처리:  67%|██████▋   | 2/3 [00:09<00:04,  4.48s/it]PDF 처리: 100%|██████████| 3/3 [00:10<00:00,  3.25s/it]PDF 처리: 100%|██████████| 3/3 [00:10<00:00,  3.66s/it]
+INFO:smart_rag:총 123개 문서 청크 로드 완료
+INFO:smart_rag:벡터 데이터베이스 구축 중...
+INFO:smart_rag:벡터 DB 구축 완료: (123, 2000)
+INFO:smart_rag:스마트 RAG 시스템 초기화 완료!
+INFO:__main__:스마트 자연어 RAG 시스템 초기화 완료
+INFO:werkzeug: * Detected change in '/home/user/webapp/app.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/app.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/app.py', reloading
+INFO:werkzeug: * Restarting with watchdog (inotify)
+ERROR:__main__:RAG 시스템 초기화 실패: name 'SmartTourismRAG' is not defined
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 961-301-114
+INFO:werkzeug: * Detected change in '/home/user/webapp/app.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/app.py', reloading
+INFO:werkzeug: * Detected change in '/home/user/webapp/app.py', reloading
+INFO:werkzeug: * Restarting with watchdog (inotify)
+INFO:enhanced_rag:향상된 RAG 시스템 초기화 시작...
+INFO:enhanced_rag:PDF 파일 로드 시작...
+PDF 처리:   0%|          | 0/3 [00:00<?, ?it/s]WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 961-301-114
+PDF 처리:  33%|███▎      | 1/3 [00:04<00:09,  4.62s/it]INFO:enhanced_rag:향상된 RAG 시스템 초기화 시작...
+INFO:enhanced_rag:PDF 파일 로드 시작...
+PDF 처리:   0%|          | 0/3 [00:00<?, ?it/s]INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://169.254.0.21:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with watchdog (inotify)
+INFO:enhanced_rag:향상된 RAG 시스템 초기화 시작...
+INFO:enhanced_rag:PDF 파일 로드 시작...
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 961-301-114
+PDF 처리:   0%|          | 0/3 [00:00<?, ?it/s]PDF 처리:  33%|███▎      | 1/3 [00:04<00:09,  4.70s/it]PDF 처리:  33%|███▎      | 1/3 [00:05<00:10,  5.13s/it]PDF 처리:  67%|██████▋   | 2/3 [00:08<00:03,  3.93s/it]PDF 처리: 100%|██████████| 3/3 [00:09<00:00,  2.91s/it]PDF 처리: 100%|██████████| 3/3 [00:09<00:00,  3.26s/it]
+INFO:enhanced_rag:총 95개 문서 청크 로드 완료
+INFO:enhanced_rag:벡터 데이터베이스 구축 중...
+INFO:enhanced_rag:벡터 DB 구축 완료: (95, 3000)
+INFO:enhanced_rag:향상된 RAG 시스템 초기화 완료!
+INFO:__main__:향상된 컨텍스트 RAG 시스템 초기화 완료
+PDF 처리:  67%|██████▋   | 2/3 [00:08<00:04,  4.08s/it]PDF 처리: 100%|██████████| 3/3 [00:10<00:00,  2.97s/it]PDF 처리: 100%|██████████| 3/3 [00:10<00:00,  3.37s/it]
+INFO:enhanced_rag:총 95개 문서 청크 로드 완료
+INFO:enhanced_rag:벡터 데이터베이스 구축 중...
+INFO:enhanced_rag:벡터 DB 구축 완료: (95, 3000)
+INFO:enhanced_rag:향상된 RAG 시스템 초기화 완료!
+INFO:__main__:향상된 컨텍스트 RAG 시스템 초기화 완료
+INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:37:11] "GET /health HTTP/1.1" 200 -
+INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:37:18] "POST /chat HTTP/1.1" 200 -
+INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:37:24] "POST /chat HTTP/1.1" 200 -
+INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:37:24] "POST /chat HTTP/1.1" 200 -
+INFO:werkzeug:10.12.18.80 - - [19/Sep/2025 06:37:24] "POST /chat HTTP/1.1" 200 -
