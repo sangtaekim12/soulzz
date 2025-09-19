@@ -14,13 +14,27 @@ app = Flask(__name__)
 # RAG 인스턴스 전역 변수
 rag_system = None
 initialization_complete = False
+initialization_in_progress = False
+initialization_lock = threading.Lock()
 
 def initialize_rag():
     """RAG 시스템을 백그라운드에서 초기화"""
-    global rag_system, initialization_complete
+    global rag_system, initialization_complete, initialization_in_progress
+
+    with initialization_lock:
+        if initialization_complete:
+            logger.info("RAG 시스템이 이미 초기화되었습니다.")
+            return
+
+        if initialization_in_progress:
+            logger.info("RAG 시스템 초기화가 이미 진행 중입니다.")
+            return
+
+        initialization_in_progress = True
+
     try:
         rag_system = SmartTourismRAG(
-            data_folder="./data", 
+            data_folder="./data",
             similarity_threshold=0.01  # 낮은 임계값으로 더 많은 결과 확보
         )
         rag_system.initialize()
@@ -29,6 +43,21 @@ def initialize_rag():
     except Exception as e:
         logger.error(f"RAG 시스템 초기화 실패: {e}")
         initialization_complete = False
+        rag_system = None
+    finally:
+        with initialization_lock:
+            initialization_in_progress = False
+
+
+# Flask 3.0에서는 before_first_request 훅이 제거되었으므로
+# 매 요청 전에 초기화 여부를 확인한다.
+@app.before_request
+def ensure_rag_ready():
+    """Flask가 WSGI 모드로 실행될 때도 초기화를 보장"""
+    if not initialization_complete and not initialization_in_progress:
+        init_thread = threading.Thread(target=initialize_rag)
+        init_thread.daemon = True
+        init_thread.start()
 
 @app.route('/')
 def index():
