@@ -30,7 +30,7 @@
         }
     </style>
 </head>
-<body>
+<body data-production-chatbot-url="https://8000-i8x91e6wa8wwvqb05llf7-6532622b.e2b.dev/">
     <div class="container mt-4">
         <h1 class="text-center text-primary">PDF 파일 업로드 가이드</h1>
         <p class="text-center text-muted">C:\project\data 폴더의 파일들을 챗봇에 업로드하는 방법</p>
@@ -109,11 +109,106 @@ $base64 | Out-File "filename.txt"
             <p>파일 내용의 주요 정보만 텍스트로 알려주시면, 즉시 챗봇용 PDF를 생성해드리겠습니다!</p>
         </div>
 
+        <div class="alert alert-success mt-4 text-break" role="alert">
+            <h5 class="mb-2">✅ 최종 배포 챗봇 주소</h5>
+            <p class="mb-1">아래 버튼이 열리지 않을 경우 다음 링크를 직접 클릭해주세요.</p>
+            <p class="mb-0 fw-bold">
+                <a href="https://8000-i8x91e6wa8wwvqb05llf7-6532622b.e2b.dev/" id="productionChatbotLink" target="_blank" rel="noopener" class="link-success text-decoration-none">
+                    https://8000-i8x91e6wa8wwvqb05llf7-6532622b.e2b.dev/
+                </a>
+            </p>
+            <p class="small text-muted mt-2 mb-0">위 버튼도 동일한 주소로 이동하도록 설정되어 있습니다.</p>
+        </div>
+
         <div class="text-center mt-4">
-            <a href="https://5000-i8x91e6wa8wwvqb05llf7-6532622b.e2b.dev" class="btn btn-primary btn-lg">
+            <a id="chatbotLink" href="http://localhost:5000" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
                 🤖 챗봇 테스트하러 가기
             </a>
+            <p id="chatbotLinkInfo" class="text-muted mt-2 small"></p>
         </div>
     </div>
+    <script>
+        (function() {
+            const linkElement = document.getElementById('chatbotLink');
+            const infoElement = document.getElementById('chatbotLinkInfo');
+            const productionLinkElement = document.getElementById('productionChatbotLink');
+
+            if (!linkElement) {
+                return;
+            }
+
+            try {
+                const bodyDataset = document.body ? document.body.dataset : undefined;
+                const productionTargetRaw = bodyDataset && bodyDataset.productionChatbotUrl ? bodyDataset.productionChatbotUrl.trim() : '';
+                const hasProductionTarget = Boolean(productionTargetRaw);
+
+                const { protocol, hostname, origin } = window.location;
+                const isHttpContext = protocol === 'http:' || protocol === 'https:';
+
+                const DEFAULT_TARGET_URL = 'http://localhost:5000';
+                const DEFAULT_TARGET_PORT = '5000';
+
+                const isLikelyLocalHost = (host) => {
+                    if (!host) {
+                        return false;
+                    }
+                    const normalizedHost = host.toLowerCase();
+                    const localPatterns = [
+                        /^localhost$/,
+                        /^127(\.\d{1,3}){3}$/,
+                        /^0\.0\.0\.0$/,
+                        /^\[?::1\]?$/,
+                        /^10(\.\d{1,3}){3}$/,
+                        /^172\.(1[6-9]|2[0-9]|3[0-1])(\.\d{1,3}){2}$/,
+                        /^192\.168(\.\d{1,3}){2}$/
+                    ];
+                    return localPatterns.some((pattern) => pattern.test(normalizedHost));
+                };
+
+                if (productionLinkElement && hasProductionTarget) {
+                    productionLinkElement.href = productionTargetRaw;
+                    productionLinkElement.textContent = productionTargetRaw;
+                }
+
+                let targetUrl = DEFAULT_TARGET_URL;
+                let resolution = 'default';
+
+                if (isHttpContext) {
+                    if (hasProductionTarget && !isLikelyLocalHost(hostname)) {
+                        targetUrl = productionTargetRaw;
+                        resolution = 'production';
+                    } else if (isLikelyLocalHost(hostname)) {
+                        const preferredProtocol = protocol === 'https:' ? 'http:' : protocol || 'http:';
+                        const safeHost = hostname || 'localhost';
+                        targetUrl = `${preferredProtocol}//${safeHost}:${DEFAULT_TARGET_PORT}`;
+                        resolution = 'local';
+                    } else if (origin && origin !== 'null') {
+                        targetUrl = origin;
+                        resolution = 'origin';
+                    }
+                } else if (hasProductionTarget) {
+                    targetUrl = productionTargetRaw;
+                    resolution = 'production';
+                }
+
+                linkElement.href = targetUrl;
+
+                if (infoElement) {
+                    const messageByResolution = {
+                        production: `배포 챗봇 주소(${targetUrl})로 이동합니다.`,
+                        local: `로컬 개발 환경을 감지해 ${targetUrl} 주소로 이동합니다.`,
+                        origin: `현재 페이지와 동일한 서버(${targetUrl})로 이동합니다.`,
+                        default: `기본 챗봇 주소(${targetUrl})로 이동합니다.`
+                    };
+                    infoElement.textContent = messageByResolution[resolution] || messageByResolution.default;
+                }
+            } catch (error) {
+                console.error('챗봇 링크 설정 중 오류가 발생했습니다.', error);
+                if (infoElement) {
+                    infoElement.textContent = '챗봇 링크를 설정하는 중 문제가 발생하여 기본 주소로 이동합니다.';
+                }
+            }
+        })();
+    </script>
 </body>
 </html>
