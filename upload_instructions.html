@@ -110,10 +110,41 @@ $base64 | Out-File "filename.txt"
         </div>
 
         <div class="text-center mt-4">
-            <a href="https://5000-i8x91e6wa8wwvqb05llf7-6532622b.e2b.dev" class="btn btn-primary btn-lg">
+            <a id="chatbotLink" href="http://localhost:5000" class="btn btn-primary btn-lg">
                 🤖 챗봇 테스트하러 가기
             </a>
+            <p class="text-muted small mt-2" id="chatbotLinkHint">
+                기본값은 로컬 서버(http://localhost:5000)입니다. 실제 서버 주소에서 열었을 경우 자동으로 해당 주소로 연결됩니다.
+            </p>
         </div>
     </div>
+    <script>
+        (function() {
+            const link = document.getElementById('chatbotLink');
+            const hint = document.getElementById('chatbotLinkHint');
+
+            if (!link) {
+                return;
+            }
+
+            try {
+                const { protocol, origin, host } = window.location;
+
+                // file:// 로 열린 경우 origin 값이 "null"이 되므로 제외
+                const isFileProtocol = protocol === 'file:';
+                const hasValidOrigin = origin && origin !== 'null';
+
+                if (!isFileProtocol && hasValidOrigin && host) {
+                    // 현재 문서가 서버를 통해 제공되면 동일한 호스트를 사용
+                    link.href = origin;
+                    if (hint) {
+                        hint.textContent = `현재 서버 주소(${origin})로 연결됩니다.`;
+                    }
+                }
+            } catch (error) {
+                console.warn('챗봇 링크를 자동으로 설정하지 못했습니다:', error);
+            }
+        })();
+    </script>
 </body>
 </html>
