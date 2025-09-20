@@ -1,31 +1,36 @@
 #!/usr/bin/env python3
 """
-향상된 RAG 시스템 - 답변 품질 개선
-TF-IDF + 컨텍스트 인식 + 고급 답변 생성
+OpenAI GPT 기반 RAG 시스템
+TF-IDF 문서 검색 + OpenAI GPT 답변 생성
 """
 
 import os
 import logging
 import re
-import random
+import json
 from PyPDF2 import PdfReader
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import numpy as np
 from tqdm import tqdm
+from openai import OpenAI
+from dotenv import load_dotenv
+
+# 환경 변수 로드
+load_dotenv()
 
 logger = logging.getLogger(__name__)
 
-class EnhancedTourismRAG:
+class GPTEnhancedRAG:
     def __init__(self, data_folder="./data", similarity_threshold=0.05):
         self.data_folder = data_folder
         self.docs = []
         self.metainfo = []
         
-        # 향상된 TF-IDF 설정
+        # TF-IDF 설정 (문서 검색용)
         self.vectorizer = TfidfVectorizer(
-            max_features=3000,  # 더 많은 특성
-            ngram_range=(1, 3),  # 3-gram까지 확장
+            max_features=3000,
+            ngram_range=(1, 3),
             lowercase=True,
             min_df=1,
             max_df=0.9,
@@ -37,8 +42,33 @@ class EnhancedTourismRAG:
         self.similarity_threshold = similarity_threshold
         self.is_initialized = False
         
-        # 향상된 답변 생성 시스템
+        # OpenAI 클라이언트 설정
+        self.setup_openai_client()
+        
+        # 초기화 시 enhanced NLG 설정 호출
         self.setup_enhanced_nlg()
+    
+    def setup_openai_client(self):
+        """OpenAI 클라이언트 설정"""
+        try:
+            api_key = os.getenv('OPENAI_API_KEY')
+            if not api_key or api_key == 'your-openai-api-key-here':
+                logger.warning("OpenAI API 키가 설정되지 않음. 데모 모드로 실행됩니다.")
+                self.openai_client = None
+                self.use_openai = False
+            else:
+                self.openai_client = OpenAI(api_key=api_key)
+                self.use_openai = True
+                logger.info("OpenAI 클라이언트 설정 완료")
+        except Exception as e:
+            logger.error(f"OpenAI 클라이언트 설정 오류: {e}")
+            self.openai_client = None
+            self.use_openai = False
+        
+        # GPT 설정
+        self.gpt_model = os.getenv('OPENAI_MODEL', 'gpt-4o-mini')
+        self.max_tokens = int(os.getenv('OPENAI_MAX_TOKENS', '500'))
+        self.temperature = float(os.getenv('OPENAI_TEMPERATURE', '0.3'))
         
     def setup_enhanced_nlg(self):
         """향상된 자연어 생성 시스템 설정"""
@@ -70,7 +100,7 @@ class EnhancedTourismRAG:
             'conclusion': ["결국", "종합하면", "이를 통해"]
         }
         
-        # 질문 유형별 키워드
+        # 질문 유형별 키워드 (classify_question_intent에서 사용)
         self.question_types = {
             'how': {
                 'keywords': ['어떻게', '방법', '방식', '과정', '절차', '산정'],
@@ -83,6 +113,18 @@ class EnhancedTourismRAG:
             'result': {
                 'keywords': ['결과', '영향', '효과', '변화', '차이'],
                 'pattern': 'result'
+            },
+            'why': {
+                'keywords': ['왜', '이유', '원인'],
+                'pattern': 'general'
+            },
+            'when': {
+                'keywords': ['언제', '시기', '기간'],
+                'pattern': 'general'
+            },
+            'where': {
+                'keywords': ['어디', '장소', '지역'],
+                'pattern': 'general'
             }
         }
 
@@ -403,407 +445,98 @@ class EnhancedTourismRAG:
         return score
 
     def generate_enhanced_answer(self, question, contextual_info, question_type, pattern_type):
-        """완전히 새로운 간단한 답변 생성"""
+        """GPT 기반 답변 생성"""
         if not contextual_info:
             return "질문과 관련된 구체적인 정보를 문서에서 찾을 수 없습니다. 다른 방식으로 질문해보시겠어요?"
         
-        # 질문 유형에 따른 특화 답변 생성
-        if '온실가스' in question and '배출량' in question:
-            return self.generate_emission_answer(contextual_info)
-        elif '한류' in question and any(word in question for word in ['특성', '특징', '목적']):
-            return self.generate_hallyu_answer(contextual_info, question)
+        # OpenAI GPT 사용 가능한 경우
+        if self.use_openai and self.openai_client:
+            try:
+                return self.generate_gpt_answer(question, contextual_info)
+            except Exception as e:
+                logger.error(f"GPT 답변 생성 오류: {e}")
+                # 폴백: 기본 답변 생성
+                return self.generate_fallback_answer(question, contextual_info)
         else:
-            return self.generate_general_answer(contextual_info, question)
+            # OpenAI API 없이 기본 답변 생성
+            return self.generate_fallback_answer(question, contextual_info)
     
-    def generate_emission_answer(self, contextual_info):
-        """온실가스 배출량 질문에 대한 맞춤 답변"""
-        # 핵심 수치 찾기
-        key_numbers = self.extract_key_numbers(contextual_info)
+    def generate_gpt_answer(self, question, contextual_info):
+        """OpenAI GPT를 사용한 답변 생성"""
+        # 컨텍스트 정보를 문자열로 결합
+        context_text = "\n\n".join(contextual_info[:3])  # 상위 3개 문서만 사용
         
-        if '3.3' in str(key_numbers) and '23317' in str(key_numbers):
-            return ("우리나라 관광산업의 온실가스 배출량은 국가 전체 배출량 대비 3.3%에 해당합니다.\n\n"
-                   "구체적으로는 23,317kt CO₂eq로 산정되었으며, 이는 직접 배출량 기준입니다. "
-                   "다만 산정 방식에 따라 결과가 달라질 수 있어 해석 시 주의가 필요합니다.")
-        elif '3.3' in str(key_numbers):
-            return ("우리나라 관광산업의 온실가스 배출량은 국가 전체 배출량 대비 3.3%로 산정되었습니다.\n\n"
-                   "이는 관광산업의 직접 온실가스 배출량 기준이며, 산정 방식에 따라 결과가 달라질 수 있습니다.")
-        elif '23317' in str(key_numbers):
-            return ("우리나라 관광산업의 온실가스 배출량은 23,317kt CO₂eq로 산정되었습니다.\n\n"
-                   "이는 직접 배출량 기준으로, 산정 방식에 따라 결과가 달라질 수 있어 해석 시 주의가 필요합니다.")
-        else:
-            # 수치를 찾을 수 없는 경우 일반적인 설명
-            return ("관광산업 온실가스 배출량은 산정 방식에 따라 달라질 수 있습니다.\n\n"
-                   "국가별 통계자료와 데이터 구조가 상이하므로, 국제 비교 시에는 "
-                   "작성 방식과 산업 범위를 확인하여 비교할 필요가 있습니다.")
+        # GPT 프롬프트 구성
+        system_prompt = """당신은 한국 관광 전문 AI 어시스턴트입니다. 
+제공된 문서 정보를 바탕으로 사용자의 질문에 정확하고 도움이 되는 답변을 해주세요.
+
+답변 규칙:
+1. 제공된 문서 정보만을 사용하여 답변하세요
+2. 2-3개 문단으로 구성하여 읽기 쉽게 작성하세요
+3. 구체적인 수치나 데이터가 있으면 포함하세요
+4. 전문적이지만 이해하기 쉬운 한국어로 작성하세요
+5. 문서에 정보가 부족하면 그 사실을 명시하세요"""
+
+        user_prompt = f"""질문: {question}
+
+참고 문서 정보:
+{context_text}
+
+위 문서 정보를 바탕으로 질문에 답해주세요."""
+
+        try:
+            response = self.openai_client.chat.completions.create(
+                model=self.gpt_model,
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_prompt}
+                ],
+                max_tokens=self.max_tokens,
+                temperature=self.temperature
+            )
+            
+            answer = response.choices[0].message.content.strip()
+            logger.info(f"GPT 답변 생성 성공 (길이: {len(answer)})")
+            return answer
+            
+        except Exception as e:
+            logger.error(f"GPT API 호출 오류: {e}")
+            raise e
     
-    def generate_hallyu_answer(self, contextual_info, question):
-        """한류 관련 질문에 대한 맞춤 답변"""
-        # 핵심 키워드 추출
-        combined_text = ' '.join(contextual_info[:2])
+    def generate_fallback_answer(self, question, contextual_info):
+        """API 오류 시 폴백 답변 생성"""
+        logger.info("폴백 답변 생성 실행")
         
-        # 한류 소비 집단 관련 정보 찾기
-        if '적극' in combined_text and '집단' in combined_text:
-            return ("한류 목적 관광객은 적극적인 한류 소비 집단으로 분류됩니다.\n\n"
-                   "이들은 K-POP, 드라마, 영화 등 한류 콘텐츠를 접하고 한국 여행에 관심을 갖게 된 외국인들로, "
-                   "실제 방문 시에는 K-POP 공연장이나 드라마 촬영지 등을 적극적으로 방문하는 특성을 보입니다.")
-        elif 'K-POP' in combined_text or '드라마' in combined_text:
-            return ("한류 목적 관광객은 주로 K-POP과 드라마에 관심이 높은 외국인들입니다.\n\n"
-                   "이들은 한류 콘텐츠를 통해 한국에 관심을 갖게 되었으며, "
-                   "실제 한국 방문 시 관련 공연장이나 촬영지를 방문하는 경향을 보입니다.")
-        else:
-            return ("한류 목적 관광객은 한류 콘텐츠를 통해 한국에 관심을 갖게 된 외국인 관광객들입니다.\n\n"
-                   "이들은 일반 관광객과 달리 한류 관련 장소나 활동에 특별한 관심을 보이며, "
-                   "한국 문화에 대한 높은 관심도를 특징으로 합니다.")
-    
-    def generate_general_answer(self, contextual_info, question):
-        """일반 질문에 대한 답변"""
         # 가장 관련성 높은 정보 선택
-        best_info = self.select_best_info(contextual_info, question)
-        
-        if not best_info:
-            return "질문과 관련된 구체적인 정보를 문서에서 찾을 수 없습니다."
-        
-        # 간단한 문장으로 재구성
-        clean_text = self.simplify_text(best_info)
-        
-        return f"문서에 따르면, {clean_text}"
+        if contextual_info:
+            best_info = contextual_info[0]  # 첫 번째 검색 결과 사용
+            
+            # 간단한 정제
+            clean_text = self.clean_text_simple(best_info)
+            
+            if len(clean_text) > 300:
+                # 너무 긴 경우 첫 200자만 사용
+                clean_text = clean_text[:200] + "..."
+            
+            return f"문서에 따르면, {clean_text}\n\n참고: 더 정확한 답변을 위해 OpenAI API 키를 설정해주세요."
+        else:
+            return "관련 정보를 찾을 수 없습니다. 다른 키워드로 질문해보세요."
     
-    def extract_key_numbers(self, texts):
-        """핵심 숫자 추출"""
-        combined_text = ' '.join(texts)
-        
-        # 더 포괄적인 숫자 찾기
-        has_33_percent = bool(re.search(r'3\.?\s*3\s*%', combined_text))
-        has_23317 = bool(re.search(r'23,?\s*317', combined_text))
-        
-        result = []
-        if has_33_percent:
-            result.append('3.3%')
-        if has_23317:
-            result.append('23317')
-            
-        return result
-    
-    def select_best_info(self, contextual_info, question):
-        """가장 관련성 높은 정보 선택"""
-        if not contextual_info:
-            return None
-        
-        # 질문 키워드 추출
-        keywords = self.extract_question_keywords(question)
-        
-        best_score = 0
-        best_info = None
-        
-        for info in contextual_info[:2]:  # 상위 2개만 검토
-            score = 0
-            for keyword in keywords:
-                if keyword in info:
-                    score += 1
-            
-            if score > best_score:
-                best_score = score
-                best_info = info
-        
-        return best_info or contextual_info[0]
-    
-    def simplify_text(self, text):
-        """텍스트 단순화"""
-        # 너무 긴 문장은 첫 번째 문장만 사용
-        sentences = re.split(r'[.!?]', text)
-        if sentences:
-            first_sentence = sentences[0].strip()
-            
-            # 불필요한 부분 제거
-            first_sentence = re.sub(r'^[0-9\s\-\.]+', '', first_sentence)
-            first_sentence = re.sub(r'^\W+', '', first_sentence)
-            
-            if len(first_sentence) > 200:
-                # 200자가 넘으면 적절한 지점에서 자르기
-                cut_point = first_sentence.find(' ', 150)
-                if cut_point > 0:
-                    first_sentence = first_sentence[:cut_point]
-            
-            return first_sentence + '.' if first_sentence and not first_sentence.endswith('.') else first_sentence
-        
-        return text[:200] + '...' if len(text) > 200 else text
-    
-# 기존 복잡한 메서드들을 단순화된 버전으로 대체
-    
-    def extract_meaningful_sentences(self, text):
-        """의미 있는 문장 추출"""
-        sentences = re.split(r'[.!?]+', text)
-        meaningful = []
-        
-        for sentence in sentences:
-            sentence = sentence.strip()
-            
-            # 너무 짧거나 긴 문장 제외
-            if len(sentence) < 25 or len(sentence) > 250:
-                continue
-            
-            # 불완전한 문장 제외
-            if re.search(r'^[A-Z\s\d\-]+$', sentence):  # 대문자와 숫자만
-                continue
-            if sentence.endswith(('등을', '등은', '것을', '것은')):
-                continue
-            
-            # 문장 정제
-            sentence = re.sub(r'^[0-9\s\-\.]+', '', sentence)  # 앞쪽 번호 제거
-            sentence = re.sub(r'\s+', ' ', sentence)  # 공백 정리
-            
-            if sentence and len(sentence) >= 20:
-                if not sentence.endswith(('.', '!', '?')):
-                    sentence += '.'
-                meaningful.append(sentence)
-        
-        return meaningful[:3]
-    
-    def format_statistical_answer(self, statistical_info, question):
-        """통계 정보를 포함한 답변 포맷"""
-        if not statistical_info:
-            return None
-            
-        # 가장 관련성 높은 통계 선택 및 정제
-        best_stats = []
-        
-        for stat in statistical_info:
-            # 숫자 포맷팅 먼저 수정
-            clean_stat = self.fix_number_formatting(stat)
-            
-            # 핵심 키워드가 포함된 통계 우선
-            if any(keyword in clean_stat for keyword in ['3.3%', '23,317', '배출량', 'CO2']):
-                best_stats.insert(0, clean_stat)  # 앞쪽에 배치
-            else:
-                best_stats.append(clean_stat)
-        
-        if best_stats:
-            # 가장 관련성 높은 통계로 답변 시작
-            main_stat = best_stats[0]
-            
-            # 핵심 수치만 추출해서 명확한 답변 구성
-            if '온실가스' in question and '배출량' in question:
-                # 구체적인 수치를 앞에 배치
-                if '3.3%' in main_stat and '23,317' in main_stat:
-                    return "연구 결과에 따르면, 우리나라 관광산업의 직접 온실가스 배출량은 국가 전체 배출량 대비 3.3% (23,317kt CO2eq)로 산정되었습니다."
-                elif '3.3%' in main_stat:
-                    return f"연구 결과에 따르면, 관광산업 온실가스 배출량은 국가 전체의 3.3%에 해당합니다."
-                elif '23,317' in main_stat:
-                    return f"연구 결과에 따르면, 관광산업 온실가스 배출량은 23,317kt CO2eq로 산정되었습니다."
-                else:
-                    return f"연구 결과에 따르면, {main_stat}"
-            else:
-                return f"분석 결과, {main_stat}"
-        
-        return None
-    
-    def format_structured_answer(self, sentences, question_type):
-        """구조화된 최종 답변 포맷"""
-        if not sentences:
-            return ""
-        
-        # 문장이 1개인 경우 간단히 처리
-        if len(sentences) == 1:
-            sentence = sentences[0].strip()
-            if not sentence.endswith(('.', '!', '?')):
-                sentence += '.'
-            return sentence
-        
-        # 문단 구성 (최소 2개 문단 보장)
-        paragraphs = []
-        current_paragraph = []
-        
-        for i, sentence in enumerate(sentences[:4]):  # 최대 4개 문장
-            sentence = sentence.strip()
-            if not sentence:
-                continue
-                
-            current_paragraph.append(sentence)
-            
-            # 첫 번째 문장은 독립 문단으로 (통계나 핵심 정보인 경우)
-            if i == 0 and (any(key in sentence for key in ['%', 'kt', 'CO2', '산정', '연구 결과'])):
-                paragraph_text = sentence
-                if not paragraph_text.endswith(('.', '!', '?')):
-                    paragraph_text += '.'
-                paragraphs.append(paragraph_text)
-                current_paragraph = []
-            # 2개 문장마다 문단 구분 또는 마지막
-            elif len(current_paragraph) >= 2 or i == len(sentences) - 1:
-                if current_paragraph:
-                    paragraph_text = ' '.join(current_paragraph)
-                    if not paragraph_text.endswith(('.', '!', '?')):
-                        paragraph_text += '.'
-                    paragraphs.append(paragraph_text)
-                    current_paragraph = []
-        
-        # 마지막 남은 문장들 처리
-        if current_paragraph:
-            paragraph_text = ' '.join(current_paragraph)
-            if not paragraph_text.endswith(('.', '!', '?')):
-                paragraph_text += '.'
-            paragraphs.append(paragraph_text)
-        
-        # 문단이 1개뿐이면 강제로 분리
-        if len(paragraphs) == 1 and len(paragraphs[0]) > 150:
-            long_paragraph = paragraphs[0]
-            sentences_in_para = re.split(r'(?<=\.)\s+', long_paragraph)
-            if len(sentences_in_para) >= 2:
-                mid_point = len(sentences_in_para) // 2
-                para1 = ' '.join(sentences_in_para[:mid_point])
-                para2 = ' '.join(sentences_in_para[mid_point:])
-                paragraphs = [para1, para2]
-        
-        # 최종 답변 조합 (항상 문단 구분 보장)
-        if len(paragraphs) == 1:
-            # 단일 문단을 두 개로 분리 시도
-            single_para = paragraphs[0]
-            if len(single_para) > 100:
-                # 자연스러운 분리점 찾기
-                split_point = single_para.find('. ', len(single_para)//2)
-                if split_point > 0:
-                    para1 = single_para[:split_point + 1]
-                    para2 = single_para[split_point + 2:]
-                    if para2:  # 두 번째 부분이 있으면
-                        final_text = f"{para1}\n\n{para2}"
-                        return self.final_text_cleanup(final_text)
-        
-        final_text = '\n\n'.join(paragraphs)
-        return self.final_text_cleanup(final_text)
-    
-    def final_text_cleanup(self, text):
-        """최종 텍스트 정리"""
-        # 줄바꿈으로 분리된 숫자 수정
-        text = re.sub(r'(\d+)\.\s*\n\n\s*(%)', r'\1.\2', text)  # "3.\n\n%" -> "3.%"
-        text = re.sub(r'(\d+)\.\s*\n\s*(\d+)', r'\1.\2', text)   # "3.\n3" -> "3.3"
-        
-        # CO2 관련 정리
-        text = re.sub(r'CO\s+2\s*eq', 'CO2eq', text)
-        text = re.sub(r'(\d+,?\d*)\s*kt\s+CO\s*2\s*eq', r'\1kt CO2eq', text)
-        
-        # 불필요한 문자 제거 (SF-MST, UN Tourism 등 뒤의 숫자들)
-        text = re.sub(r',\s*SF-MST[^.]*?(\d+)\.', '.', text)
-        text = re.sub(r',\s*UN Tourism[^.]*?(\d+)\.', '.', text)
-        
-        # 연속된 공백과 줄바꿈 정리
+    def clean_text_simple(self, text):
+        """간단한 텍스트 정제"""
+        # 불필요한 부분 제거
+        text = re.sub(r'^[0-9\s\-\.]+', '', text)
         text = re.sub(r'\s+', ' ', text)
-        text = re.sub(r'\n\n+', '\n\n', text)
         
-        return text.strip()
-
-    def format_to_sentences(self, text):
-        """텍스트를 완성된 문장들로 변환"""
-        # 불필요한 부분 제거
-        text = re.sub(r'^[0-9\s\-\.]+', '', text)  # 앞쪽 번호 제거
-        text = re.sub(r'\s+', ' ', text)  # 공백 정리
-        text = text.strip()
-        
-        if not text:
-            return []
-        
-        # 긴 문장을 적절히 나누기 위한 전처리
-        # 대시나 콤마로 구분된 부분을 문장으로 분리
-        text = re.sub(r'\s*-\s*', '. ', text)  # 대시를 마침표로
-        text = re.sub(r'([^,]{50,}),\s*([가-힣])', r'\1. \2', text)  # 긴 문장의 콤마를 마침표로
-        
-        # 문장 분리 (마침표, 느낌표, 물음표 기준)
+        # 첫 번째 완성된 문장 찾기
         sentences = re.split(r'[.!?]', text)
-        formatted_sentences = []
+        if sentences and len(sentences[0].strip()) > 20:
+            return sentences[0].strip() + '.'
         
-        for sentence in sentences:
-            sentence = sentence.strip()
-            if len(sentence) < 15:  # 너무 짧은 문장 제외
-                continue
-            
-            # 문장 시작 정리
-            sentence = re.sub(r'^[-\s]+', '', sentence)
-            
-            # 너무 긴 문장 분리 (100자 이상)
-            if len(sentence) > 100:
-                # 자연스러운 분리점 찾기
-                split_points = []
-                for i, char in enumerate(sentence):
-                    if char in ['는', '을', '를', '에', '로', '고', '며'] and i > 40 and i < len(sentence) - 20:
-                        split_points.append(i + 1)
-                
-                if split_points:
-                    # 가장 적절한 분리점 선택 (중간 부근)
-                    mid_point = len(sentence) // 2
-                    best_split = min(split_points, key=lambda x: abs(x - mid_point))
-                    
-                    part1 = sentence[:best_split].strip()
-                    part2 = sentence[best_split:].strip()
-                    
-                    if part1 and len(part1) > 15:
-                        formatted_sentences.append(part1 + '.')
-                    if part2 and len(part2) > 15:
-                        sentence = part2
-            
-            # 완성된 문장으로 만들기
-            if sentence and not sentence.endswith(('.', '!', '?')):
-                sentence += '.'
-            
-            if sentence and len(sentence) > 15:
-                formatted_sentences.append(sentence)
-        
-        # 최대 4개 문장으로 제한
-        return formatted_sentences[:4]
+        return text.strip()[:200]
     
-    def format_final_answer(self, answer_parts):
-        """최종 답변을 문단 구분과 함께 포맷"""
-        if not answer_parts:
-            return ""
-        
-        # 최대 5개 문장으로 제한하여 간결성 유지
-        limited_parts = answer_parts[:5]
-        
-        formatted_paragraphs = []
-        current_paragraph = []
-        
-        for i, sentence in enumerate(limited_parts):
-            # 각 문장이 마침표로 끝나는지 확인
-            if not sentence.rstrip().endswith(('.', '!', '?')):
-                sentence = sentence.rstrip() + '.'
-            
-            current_paragraph.append(sentence)
-            
-            # 2개 문장마다 문단 구분 또는 마지막 문장
-            if len(current_paragraph) >= 2 or i == len(limited_parts) - 1:
-                if current_paragraph:
-                    # 문단 내 문장들을 한 줄로 연결
-                    paragraph_text = ' '.join(current_paragraph)
-                    formatted_paragraphs.append(paragraph_text)
-                    current_paragraph = []
-        
-        # 문단들을 줄바꿈으로 구분하여 결합
-        final_answer = '\n\n'.join(formatted_paragraphs)
-        
-        # 길이 제한 (너무 긴 경우 첫 번째 문단만 사용)
-        if len(final_answer) > 400 and len(formatted_paragraphs) > 1:
-            final_answer = formatted_paragraphs[0]
-            if not final_answer.endswith('.'):
-                final_answer += '.'
-        
-        return final_answer
-    
-    def clean_answer_text(self, text):
-        """답변 텍스트 정제 (레거시 메서드)"""
-        # 불필요한 부분 제거
-        text = re.sub(r'^[0-9\s\-\.]+', '', text)  # 앞쪽 번호 제거
-        text = re.sub(r'\s+', ' ', text)  # 공백 정리
-        
-        # 문장 경계 정리
-        if not text.endswith(('.', '!', '?')):
-            # 마지막 완전한 문장까지만 유지
-            sentences = re.split(r'[.!?]', text)
-            if len(sentences) > 1:
-                text = '.'.join(sentences[:-1]) + '.'
-            else:
-                text += '.'
-        
-        return text.strip()
-
     def generate_answer(self, question):
-        """최종 답변 생성"""
+        """최종 답변 생성 (main entry point)"""
         if not self.is_initialized:
             return "시스템이 초기화되지 않았습니다.", []
         
@@ -825,7 +558,7 @@ class EnhancedTourismRAG:
                 logger.info("컨텍스트 추출 실패, 원본 문서 직접 사용")
                 contextual_info = self.fallback_extract_info(retrieved_docs, question)
             
-            # 향상된 답변 생성
+            # GPT 기반 답변 생성
             enhanced_answer = self.generate_enhanced_answer(
                 question, contextual_info, question_type, pattern_type
             )
@@ -835,125 +568,45 @@ class EnhancedTourismRAG:
         except Exception as e:
             logger.error(f"답변 생성 오류: {e}")
             return "답변 생성 중 오류가 발생했습니다.", []
-
-    def fallback_extract_info(self, docs, question):
-        """폴백: 원본 문서에서 직접 정보 추출 - 개선된 버전"""
+    
+    def fallback_extract_info(self, retrieved_docs, question):
+        """폴백: 원본 문서에서 직접 정보 추출"""
         logger.info("폴백 정보 추출 실행")
-        fallback_info = []
         
-        # 질문 키워드
-        keywords = self.extract_question_keywords(question)
+        extracted_info = []
+        question_keywords = self.extract_question_keywords(question)
         
-        # 주제별 특화 키워드 확장
-        specialized_keywords = {
-            'hallyu': ['한류', '적극', '집단', '특성', '여성', '20대', 'K-POP', '드라마', 'BTS', '블랙핑크'],
-            'environment': ['온실가스', '배출량', 'CO2', 'CO₂', 'kt', '탄소', '환경', '기후', '3.3%', '23,317'],
-            'tourism': ['관광', '관광객', '여행', '방문', '외래', '입국', '숙박', '체류'],
-            'statistics': ['%', '비율', '통계', '조사', '분석', '연구', '데이터', '결과', '산정']
-        }
-        
-        # 질문 유형에 따른 키워드 가중치
-        question_lower = question.lower()
-        active_keywords = keywords.copy()
-        
-        for category, words in specialized_keywords.items():
-            for word in words:
-                if word.lower() in question_lower or any(k in word for k in keywords):
-                    active_keywords.extend(words)
-                    break
-        
-        # 중복 제거
-        active_keywords = list(set(active_keywords))
-        
-        for doc in docs[:3]:  # 상위 3개 문서 검토
-            # 더 나은 문장 분리
-            sentences = self.smart_sentence_split(doc)
+        for doc in retrieved_docs[:3]:  # 상위 3개 문서만 사용
+            # 문서를 문장 단위로 분할
+            sentences = re.split(r'[.!?]\s+', doc)
             
             for sentence in sentences:
-                if len(sentence) < 25 or len(sentence) > 300:  # 적절한 길이 조정
+                sentence = sentence.strip()
+                if len(sentence) < 20:  # 너무 짧은 문장 제외
                     continue
                 
-                # 키워드 매칭 점수 계산
-                matches = 0
-                priority_matches = 0
+                # 질문 키워드가 포함된 문장 우선 선택
+                keyword_count = sum(1 for keyword in question_keywords if keyword in sentence)
+                if keyword_count > 0 or len(extracted_info) < 2:
+                    extracted_info.append(sentence + ".")
                 
-                for keyword in active_keywords:
-                    if keyword in sentence:
-                        matches += 1
-                        # 숫자나 통계 정보가 있는 경우 우선순위
-                        if re.search(r'\d+(?:\.\d+)?(?:%|kt|톤|명|개|억|만)', sentence):
-                            priority_matches += 2
-                        # 핵심 키워드 우선순위
-                        if keyword in ['온실가스', '배출량', '3.3%', '23,317', 'CO2', '한류', '특성']:
-                            priority_matches += 1
-                
-                # 선택 기준: 키워드 매칭이 있고, 우선순위 점수가 높은 문장
-                if matches >= 1 and (priority_matches > 0 or matches >= 2):
-                    # 문장 정제
-                    clean_sentence = self.clean_fallback_sentence(sentence)
-                    if clean_sentence and clean_sentence not in fallback_info:
-                        fallback_info.append(clean_sentence)
-                    
-                if len(fallback_info) >= 4:
+                # 충분한 정보가 모이면 중단
+                if len(extracted_info) >= 3:
                     break
             
-            if len(fallback_info) >= 4:
+            if len(extracted_info) >= 3:
                 break
         
-        return fallback_info[:3]
-    
-    def smart_sentence_split(self, text):
-        """더 스마트한 문장 분리"""
-        # 기본 분리 (마침표, 느낌표, 물음표)
-        sentences = re.split(r'[.!?]\s*', text)
-        
-        refined_sentences = []
-        for sentence in sentences:
-            sentence = sentence.strip()
-            if not sentence:
-                continue
-            
-            # 너무 긴 문장은 추가로 분리
-            if len(sentence) > 200:
-                # 자연스러운 분리점 찾기 (세미콜론, 대시 등)
-                parts = re.split(r'[;\-–—]\s*', sentence)
-                refined_sentences.extend([p.strip() for p in parts if p.strip()])
-            else:
-                refined_sentences.append(sentence)
-        
-        return refined_sentences
-    
-    def clean_fallback_sentence(self, sentence):
-        """폴백 문장 정제"""
-        # 앞뒤 공백 제거
-        sentence = sentence.strip()
-        
-        # 불필요한 접두사 제거
-        sentence = re.sub(r'^[0-9\s\-\.]+', '', sentence)
-        sentence = re.sub(r'^(그림|표|참고|주석|각주)\s*\d*\s*', '', sentence)
-        
-        # 불완전한 끝부분 제거 (단독 문자나 숫자)
-        sentence = re.sub(r'\s+[A-Z]{1,3}\.?$', '', sentence)  # "SF." 같은 것들
-        sentence = re.sub(r'\s+\d+\.?$', '', sentence)  # 단독 숫자
-        
-        # 너무 짧거나 의미 없는 문장 필터링
-        if len(sentence) < 20:
-            return None
-        
-        # 마침표 추가 (없는 경우)
-        if not sentence.endswith(('.', '!', '?', ':')):
-            sentence += '.'
-        
-        return sentence
+        return extracted_info
 
     def health_check(self):
         """시스템 상태"""
         return {
             "initialized": self.is_initialized,
             "documents_loaded": len(self.docs),
-            "model_loaded": True,
-            "model_name": "enhanced-contextual-rag",
+            "openai_enabled": self.use_openai,
+            "model_name": self.gpt_model if self.use_openai else "fallback-mode",
             "vector_db_ready": self.doc_vectors is not None,
-            "version": "enhanced_contextual_rag_system",
-            "features": "contextual_search+enhanced_nlg+multi_strategy"
+            "version": "gpt_enhanced_rag_system",
+            "features": "tfidf_search+gpt_generation+fallback"
         }

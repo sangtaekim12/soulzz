@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify, render_template
 import threading
 import time
 import logging
-from enhanced_rag import EnhancedTourismRAG
+from enhanced_rag import GPTEnhancedRAG
 import os
 
 # 로깅 설정
@@ -19,7 +19,7 @@ def initialize_rag():
     """RAG 시스템을 백그라운드에서 초기화"""
     global rag_system, initialization_complete
     try:
-        rag_system = EnhancedTourismRAG(
+        rag_system = GPTEnhancedRAG(
             data_folder="./data", 
             similarity_threshold=0.01  # 매우 낮은 임계값으로 더 많은 문서 확보
         )
