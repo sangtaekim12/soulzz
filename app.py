@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify, render_template
 import threading
 import time
 import logging
-from enhanced_rag import GPTEnhancedRAG
+from bm25_enhanced_rag import BM25EnhancedRAG
 import os
 
 # 로깅 설정
@@ -19,13 +19,13 @@ def initialize_rag():
     """RAG 시스템을 백그라운드에서 초기화"""
     global rag_system, initialization_complete
     try:
-        rag_system = GPTEnhancedRAG(
+        rag_system = BM25EnhancedRAG(
             data_folder="./data", 
-            similarity_threshold=0.01  # 매우 낮은 임계값으로 더 많은 문서 확보
+            similarity_threshold=0.2  # BM25 하이브리드 임계값
         )
         rag_system.initialize()
         initialization_complete = True
-        logger.info("향상된 컨텍스트 RAG 시스템 초기화 완료")
+        logger.info("BM25 + TF-IDF 하이브리드 RAG 시스템 초기화 완료")
     except Exception as e:
         logger.error(f"RAG 시스템 초기화 실패: {e}")
         initialization_complete = False
@@ -124,9 +124,9 @@ def upload_files():
                 uploaded_files.append(filename)
         
         if uploaded_files:
-            # RAG 시스템 재초기화 (향상된 컨텍스트 버전)
+            # RAG 시스템 재초기화 (BM25 하이브리드)
             if rag_system:
-                rag_system.__init__('./data', 0.01)
+                rag_system.__init__('./data', 0.2)
                 rag_system.initialize()
             
             return jsonify({
